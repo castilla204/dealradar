@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "dfsCC8CXvMdApKDFAlEDC2RvnERpt5mL0i7A/oDqkLc=",
+  "Source": "ScrapperGateway",
+  "BasePath": "_content/ScrapperGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
