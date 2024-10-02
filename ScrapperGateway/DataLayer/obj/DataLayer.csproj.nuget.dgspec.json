@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diego\\source\\repos\\GrupGateway\\DataLayer\\DataLayer.csproj": {}
+    "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diego\\source\\repos\\GrupGateway\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\DataLayer\\DataLayer.csproj",
+        "projectPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -515,11 +515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\ScrapperGateway\\ScrapperGateway.csproj",
+      "projectUniqueName": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\ScrapperGateway.csproj",
       "projectName": "ScrapperGateway",
-      "projectPath": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\ScrapperGateway\\ScrapperGateway.csproj",
+      "projectPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\ScrapperGateway.csproj",
       "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\ScrapperGateway\\obj\\",
+      "outputPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -541,11 +541,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Diego\\source\\repos\\GrupGateway\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\DataLayer\\DataLayer.csproj"
+            "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj"
             },
-            "C:\\Users\\Diego\\source\\repos\\GrupGateway\\ServicesLayer\\ServicesLayer.csproj": {
-              "projectPath": "C:\\Users\\Diego\\source\\repos\\GrupGateway\\ServicesLayer\\ServicesLayer.csproj"
+            "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\ServicesLayer.csproj": {
+              "projectPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\ServicesLayer.csproj"
             }
           }
         }
