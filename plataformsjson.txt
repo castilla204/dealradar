@@ -1,0 +1,379 @@
+motos.net:
+  {
+            "id": "8456577",
+            "creationDate": "2024-08-29T13:06:10Z",
+            "title": "HONDA CB 600F HORNET",
+            "url": "/ocasion/honda/cb_600f_hornet/2008-en-zaragoza-8456577.htm",
+            "price": {
+                "amount": 2600
+            },
+            "seller": {
+                "name": "MD Zaragoza",
+                "isProfessional": true,
+                "contractId": "1000837",
+                "pack": {
+                    "legacyId": 19,
+                    "type": "discover"
+                }
+            },
+            "km": 82000,
+            "year": 2008,
+            "cubicCapacity": 599,
+            "provinceIds": [
+                50
+            ],
+            "mainProvince": "Zaragoza",
+            "location": {
+                "provinceIds": [
+                    50
+                ],
+                "mainProvince": "Zaragoza",
+                "mainProvinceId": 50,
+                "cityId": 50297,
+                "cityLiteral": "Zaragoza Capital"
+            },
+            "resources": [
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.mcdn.es/mnet/2024/08/29/8456577/29124619_g.jpg"
+                },
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.mcdn.es/mnet/2024/08/29/8456577/29124620_g.jpg"
+                },
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.mcdn.es/mnet/2024/08/29/8456577/29124621_g.jpg"
+                },
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.mcdn.es/mnet/2024/08/29/8456577/29124622_g.jpg"
+                },
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.mcdn.es/mnet/2024/08/29/8456577/29124623_g.jpg"
+                },
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.mcdn.es/mnet/2024/08/29/8456577/29124624_g.jpg"
+                },
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.mcdn.es/mnet/2024/08/29/8456577/29124625_g.jpg"
+                }
+            ],
+            "makeId": 69,
+            "modelId": 1768,
+            "fuelTypeId": 2,
+            "fuelType": "Gasolina",
+            "bodyTypeId": 14,
+            "isFinanced": false,
+            "isCertified": false,
+            "isProfessional": true,
+            "publishedDate": "2024-10-08T21:42:47Z",
+            "hasUrge": false,
+            "offerType": {
+                "id": 0,
+                "literal": "Ocasión"
+            },
+            "phone": "876274502",
+            "contractId": "1000837",
+            "pack": {
+                "legacyId": 19,
+                "type": "discover"
+            }
+        }
+
+
+
+coches.net:
+ {
+            "id": "58845137",
+            "creationDate": "2024-10-01T12:27:32Z",
+            "title": "OPEL Corsa 1.4 Turbo 110kW 150CV GSI SS 3p.",
+            "url": "/opel-corsa-1.4-turbo-110kw-150cv-gsi-ss-3p-gasolina-2019-en-sta.-c.-tenerife-58845137-covo.aspx",
+            "price": {
+                "amount": 9995,
+                "financedAmount": 9995,
+                "taxTypeId": 2,
+                "hasTaxes": true,
+                "indicator": {
+                    "average": 11500,
+                    "rank": 5
+                }
+            },
+            "seller": {
+                "name": "Coches Si O Si ",
+                "isProfessional": true,
+                "contractId": "131616",
+                "pack": {
+                    "legacyId": 21,
+                    "type": "advance"
+                },
+                "ratings": {
+                    "scoreAverage": 4.3,
+                    "commentsNumber": 6
+                }
+            },
+            "km": 155000,
+            "year": 2018,
+            "cubicCapacity": 1364,
+            "provinceIds": [
+                38
+            ],
+            "mainProvince": "Sta. C. Tenerife",
+            "location": {
+                "provinceIds": [
+                    38
+                ],
+                "mainProvince": "Sta. C. Tenerife",
+                "mainProvinceId": 38,
+                "cityId": 38043,
+                "cityLiteral": "Tacoronte"
+            },
+            "resources": [
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.ccdn.es/cnet/2024/10/01/58845137/1961953802_g.jpg"
+                },
+
+                {
+                    "type": "IMAGE",
+                    "url": "https://a.ccdn.es/cnet/2024/10/01/58845137/1961953937_g.jpg"
+                }
+            ],
+            "videos": [
+                {
+                    "url": "https://cf.media.ccdn.es/api/v1/pro-pro-videos/videos/6c/6c43c60d-73ef-4d49-aa8c-095d02865f6e?rule=yams-hls",
+                    "autoPlay": false,
+                    "position": "FIRST",
+                    "provider": 1,
+                    "externalId": null
+                }
+            ],
+            "makeId": 32,
+            "modelId": 77,
+            "fuelTypeId": 2,
+            "fuelType": "Gasolina",
+            "bodyTypeId": 1,
+            "warranty": {
+                "id": 2,
+                "months": 12
+            },
+            "isFinanced": true,
+            "isCertified": false,
+            "isProfessional": true,
+            "publishedDate": "2024-10-09T20:26:42Z",
+            "hasUrge": false,
+            "offerType": {
+                "id": 0,
+                "literal": "Ocasión"
+            },
+            "phone": "609105119",
+            "drivenWheelsId": 3,
+            "contractId": "131616",
+            "pack": {
+                "legacyId": 21,
+                "type": "advance"
+            },
+            "transmissionTypeId": 2
+        }
+
+
+
+
+
+
+
+wallapop:
+{
+                        "id": "p6141wxvl565",
+                        "user_id": "lqzm95p54y6v",
+                        "title": "Escape Yoshimura AT2 MT09/XSR 900",
+                        "description": "Se vende como nuevo con db killer incluido. Apenas 500km. Linea completa.\n\n\n",
+                        "category_id": 12800,
+                        "price": {
+                            "amount": 1000.0,
+                            "currency": "EUR"
+                        },
+                        "images": [
+                            {
+                                "average_color": "13C1AC",
+                                "urls": {
+                                    "small": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520245.jpg?pictureSize=W320",
+                                    "medium": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520245.jpg?pictureSize=W640",
+                                    "big": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520245.jpg?pictureSize=W800"
+                                }
+                            },
+                            {
+                                "average_color": "13C1AC",
+                                "urls": {
+                                    "small": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520291.jpg?pictureSize=W320",
+                                    "medium": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520291.jpg?pictureSize=W640",
+                                    "big": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520291.jpg?pictureSize=W800"
+                                }
+                            },
+                            {
+                                "average_color": "13C1AC",
+                                "urls": {
+                                    "small": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520300.jpg?pictureSize=W320",
+                                    "medium": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520300.jpg?pictureSize=W640",
+                                    "big": "https://cdn.wallapop.com/images/10420/hh/iu/__/c10420p1057357207/i5172520300.jpg?pictureSize=W800"
+                                }
+                            }
+                        ],
+                        "reserved": {
+                            "flag": false
+                        },
+                        "location": {
+                            "latitude": 39.44601907426858,
+                            "longitude": -0.37720954230821097,
+                            "postal_code": "46026",
+                            "city": "Valencia",
+                            "region": "Comunidad Valenciana",
+                            "region2": "Valencia",
+                            "country_code": "ES"
+                        },
+                        "shipping": {
+                            "item_is_shippable": true,
+                            "user_allows_shipping": true
+                        },
+                        "favorited": {
+                            "flag": false
+                        },
+                        "bump": {
+                            "type": "none"
+                        },
+                        "web_slug": "escape-yoshimura-at2-mt09-xsr-900-1057357207",
+                        "created_at": 1728496234408,
+                        "modified_at": 1728496244612,
+                        "taxonomy": [
+                            {
+                                "id": 12800,
+                                "name": "Motor y accesorios",
+                                "icon": "helmet"
+                            },
+                            {
+                                "id": 10168,
+                                "name": "Recambios de motos y cuatriclicos",
+                                "icon": null
+                            },
+                            {
+                                "id": 10439,
+                                "name": "Motor y piezas de motor",
+                                "icon": null
+                            }
+                        ],
+                        "is_favoriteable": {
+                            "flag": true
+                        },
+                        "is_refurbished": {
+                            "flag": false
+                        }
+                    }
+
+
+
+
+
+milanuncios:
+{
+        "category":{
+            "id":24,
+            "name":"Motos de carretera",
+            "slug":"motos-de-carretera"
+        },
+        "categoryId":24,
+        "categoryTree":[
+            {
+                "id":1,
+                "name":"Motor",
+                "slug":"motor"
+            },
+            {
+                "id":14,
+                "name":"Motos",
+                "slug":"motos-de-segunda-mano"
+            },
+            {
+                "id":24,
+                "name":"Motos de carretera",
+                "slug":"motos-de-carretera"
+            }
+        ],
+        "city":{
+            "id":33864,
+            "name":"Benalmadena Costa",
+            "slug":"benalmadena-costa"
+        },
+        "contactable":true,
+        "description":"Honda Hornet 600 del ano 2008. ITV hasta octobre 2025. 30000km MUY muy nueva, vendo por no usar. 2 llaves. Bateria nueva, cambiada en el 31 octobre.  No hay que hacerle nada. No encontraras muchas unidades en este estado. Atiendo whatsapp",
+        "isVipContent":true,
+        "highlighted":false,
+        "id":"520489567",
+        "images":[
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/8e471835-7293-4dd3-bb1b-033fd3e6cb93",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/27ebb15f-82e4-4d9a-b3ac-4ba8de857de7",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/f028806b-d0dd-489e-81fb-5a0592f24fe3",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/2fb626f8-6488-4d98-8e38-f2e8703599d1",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/1881c25d-676e-4511-8896-92d3db889327",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/3c435076-90e5-48ef-b472-3781733148ed",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/bc026a45-1f43-4dc0-bf34-a81ec8f654fb",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/4e074c6c-f237-4a85-ba4a-7ecb94173429",
+            "images.milanuncios.com/api/v1/ma-ad-media-pro/images/7571c96b-2495-40fa-b11e-fc661642fb78"
+        ],
+        "isNew":false,
+        "isReserved":"RELEASED",
+        "location":{
+            "city":{
+                "id":33864,
+                "name":"Benalmadena Costa",
+                "slug":"benalmadena-costa"
+            },
+            "province":{
+                "id":29,
+                "name":"Málaga",
+                "slug":"malaga"
+            },
+            "region":{
+                "id":55,
+                "name":"Andalucía",
+                "slug":"andalucia"
+            }
+        },
+        "origin":{
+            "name":"milanuncios",
+            "provider":null
+        },
+        "price":{
+            "cashPrice":{
+                "value":3450,
+                "includeTaxes":false
+            }
+        },
+        "province":{
+            "id":29,
+            "name":"Málaga",
+            "slug":"malaga"
+        },
+        "publishDate":"2024-07-25T17:57:01Z",
+        "searchLink":{
+            "label":"Motos de carretera en Benalmadena Costa",
+            "url":"/motos-de-carretera-en-benalmadena-costa-malaga/"
+        },
+        "sellerType":"private",
+        "sellType":"supply",
+        "seoTitle":"Eduardo",
+        "tags":[
+            {
+                "type":"kilómetros",
+                "text":"30.000 kms"
+            },
+            {
+                "type":"año",
+                "text":"2008"
+            },
+            {
+                "type":"cc",
+                "text":"599 cc"
+            }

@@ -12,7 +12,7 @@ let cookiesList: string[] = [];
 
 // FunctiontoObtainWebCookies
 async function fetchCookies(): Promise<void> {
-    const BROWSER_WS = "wss://brd-customer-hl_d27bbe0e-zone-scraping_browser1:yg0dktbm74f0@brd.superproxy.io:9222";
+    const BROWSER_WS = "wss://brd-customer-hl_83e6708b-zone-scraping_browser1:slm7mxu8j1r5@brd.superproxy.io:9222";
     
     console.log("Connecting to browser...");
     const browser = await puppeteer.connect({

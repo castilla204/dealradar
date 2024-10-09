@@ -1,0 +1,451 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"Category": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"slug": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"slug"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CategoryTree": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"slug": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"slug"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"City": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"slug": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"slug"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"City2": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"slug": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"slug"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Province": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"slug": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"slug"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Region": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"slug": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"slug"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Location": {
+				"properties": {
+					"city": {
+						"$ref": "#/components/schemas/City2"
+					},
+					"province": {
+						"$ref": "#/components/schemas/Province"
+					},
+					"region": {
+						"$ref": "#/components/schemas/Region"
+					}
+				},
+				"required": [
+					"city",
+					"province",
+					"region"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Origin": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"provider": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CashPrice": {
+				"properties": {
+					"value": {
+						"type": "number",
+						"format": "double"
+					},
+					"includeTaxes": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"value"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Price": {
+				"properties": {
+					"cashPrice": {
+						"$ref": "#/components/schemas/CashPrice"
+					}
+				},
+				"required": [
+					"cashPrice"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Province2": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"slug": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"slug"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SearchLink": {
+				"properties": {
+					"label": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"label",
+					"url"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Tag": {
+				"properties": {
+					"type": {
+						"type": "string"
+					},
+					"text": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"type",
+					"text"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Ad": {
+				"properties": {
+					"category": {
+						"$ref": "#/components/schemas/Category"
+					},
+					"categoryId": {
+						"type": "number",
+						"format": "double"
+					},
+					"categoryTree": {
+						"items": {
+							"$ref": "#/components/schemas/CategoryTree"
+						},
+						"type": "array"
+					},
+					"city": {
+						"$ref": "#/components/schemas/City"
+					},
+					"contactable": {
+						"type": "boolean"
+					},
+					"description": {
+						"type": "string"
+					},
+					"highlighted": {
+						"type": "boolean"
+					},
+					"id": {
+						"type": "string"
+					},
+					"images": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"isNew": {
+						"type": "boolean"
+					},
+					"isReserved": {
+						"type": "string"
+					},
+					"location": {
+						"$ref": "#/components/schemas/Location"
+					},
+					"origin": {
+						"$ref": "#/components/schemas/Origin"
+					},
+					"price": {
+						"$ref": "#/components/schemas/Price"
+					},
+					"province": {
+						"$ref": "#/components/schemas/Province2"
+					},
+					"publishDate": {
+						"type": "string"
+					},
+					"searchLink": {
+						"$ref": "#/components/schemas/SearchLink"
+					},
+					"sellerType": {
+						"type": "string"
+					},
+					"sellType": {
+						"type": "string"
+					},
+					"seoTitle": {
+						"type": "string"
+					},
+					"tags": {
+						"items": {
+							"$ref": "#/components/schemas/Tag"
+						},
+						"type": "array"
+					},
+					"title": {
+						"type": "string"
+					},
+					"url": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "number",
+						"format": "double"
+					},
+					"sortDate": {
+						"type": "string"
+					},
+					"updateDate": {
+						"type": "string"
+					},
+					"shippingType": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"category",
+					"categoryId",
+					"categoryTree",
+					"city",
+					"contactable",
+					"description",
+					"highlighted",
+					"id",
+					"images",
+					"isNew",
+					"isReserved",
+					"location",
+					"origin",
+					"price",
+					"province",
+					"publishDate",
+					"searchLink",
+					"sellerType",
+					"sellType",
+					"seoTitle",
+					"tags",
+					"title",
+					"url",
+					"userId",
+					"sortDate",
+					"updateDate"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ScrapingRequest": {
+				"properties": {
+					"searchTerms": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"pagesToScrap": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"searchTerms",
+					"pagesToScrap"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "milanunciosscrapper",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"paths": {
+		"/scraping": {
+			"post": {
+				"operationId": "ScrapeAds",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/Ad"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"description": "Scrapes ads from MilAnuncios based on search terms",
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"description": "Contains search terms and number of pages to scrape",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ScrapingRequest",
+								"description": "Contains search terms and number of pages to scrape"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

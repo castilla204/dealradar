@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diego\\source\\repos\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj": {}
+    "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi&ApiClient\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diego\\source\\repos\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj": {
+    "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi&ApiClient\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diego\\source\\repos\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj",
+        "projectUniqueName": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi&ApiClient\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj",
         "projectName": "ClientScrapperMilanuncios",
-        "projectPath": "C:\\Users\\Diego\\source\\repos\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj",
+        "projectPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi&ApiClient\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios.csproj",
         "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diego\\source\\repos\\ClientScrapperMilanuncios\\obj\\",
+        "outputPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi&ApiClient\\ClientScrapperMilanuncios\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

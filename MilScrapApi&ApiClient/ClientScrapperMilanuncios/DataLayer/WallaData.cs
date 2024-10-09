@@ -13,14 +13,14 @@ namespace ClientScrapperMilanuncios.DataLayer
         public async Task DisplayMessageAsync()
         {
             // URL del API al que se va a enviar la solicitud POST
-            var urlToPost = "http://localhost:3000/scrape";
+            var urlToPost = "http://localhost:8000/scraping";
 
             // Cuerpo de la solicitud en formato JSON
    
             var bodytosendinthepost = new
             {
                 searchTerms = new string[] { "Honda hornet 600" },
-                pagesToScrap = 10
+                pagesToScrap = 1
             };
 
             // Serializamos el cuerpo a JSON

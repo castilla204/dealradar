@@ -1,0 +1,44 @@
+{
+  "name": "milanunciosscrapper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "predev": "npm run swagger",
+    "prebuild": "npm run swagger",
+    "dev": "concurrently \"nodemon\" \"tsoa spec-and-routes\"",
+    "swagger": "tsoa spec-and-routes",
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.7.5",
+    "@types/swagger-ui-express": "^4.1.6",
+    "concurrently": "^9.0.1",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "morgan": "^1.10.0",
+    "puppeteer-core": "^23.5.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "reflect-metadata": "^0.2.2",
+    "swagger-ui-express": "^5.0.1",
+    "tsoa": "^6.4.0"
+  }
+}

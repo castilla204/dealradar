@@ -113,88 +113,155 @@ namespace DataLayer
 
     public class Web3Data : IWeb3Data
     {
-
         private static readonly HttpClient client = new HttpClient();
+        private readonly string deviceId;
+        private readonly string mpid;
+        private const string APP_VERSION = "83070";
+
+        public Web3Data()
+        {
+            deviceId = Guid.NewGuid().ToString();
+            mpid = GenerateMPID();
+            SetupHttpClient();
+        }
+
+        private string GenerateMPID()
+        {
+            // Genera un MPID similar al formato observado (número de 19 dígitos)
+            Random random = new Random();
+            return (8000000000000000000 + random.Next(1999999999)).ToString();
+        }
+
+        private void SetupHttpClient()
+        {
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Add("Accept", "application/json, text/plain, */*");
+            client.DefaultRequestHeaders.Add("Accept-Language", "es,es-ES;q=0.9");
+            client.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
+            client.DefaultRequestHeaders.Add("DNT", "1");
+            client.DefaultRequestHeaders.Add("DeviceOS", "0");
+            client.DefaultRequestHeaders.Add("MPID", mpid);
+            client.DefaultRequestHeaders.Add("Origin", "https://es.wallapop.com");
+            client.DefaultRequestHeaders.Add("Pragma", "no-cache");
+            client.DefaultRequestHeaders.Add("Referer", "https://es.wallapop.com/");
+            client.DefaultRequestHeaders.Add("Sec-Fetch-Dest", "empty");
+            client.DefaultRequestHeaders.Add("Sec-Fetch-Mode", "cors");
+            client.DefaultRequestHeaders.Add("Sec-Fetch-Site", "same-site");
+            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36");
+            client.DefaultRequestHeaders.Add("X-AppVersion", APP_VERSION);
+            client.DefaultRequestHeaders.Add("X-DeviceID", deviceId);
+            client.DefaultRequestHeaders.Add("X-DeviceOS", "0");
+            client.DefaultRequestHeaders.Add("sec-ch-ua", "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"");
+            client.DefaultRequestHeaders.Add("sec-ch-ua-mobile", "?0");
+            client.DefaultRequestHeaders.Add("sec-ch-ua-platform", "\"Windows\"");
+        }
+
         public async Task<string> MakeRequestAsync(string keywords, string? latitude, string? longitude, int? minprice, int? maxprice)
         {
-            string apiUrl = "https://api.wallapop.com/api/v3/general/search";
-             latitude =  latitude ?? "41.76401";
-             longitude = longitude ?? "-2.46883";
-             keywords = keywords ?? "quad";
-             minprice = minprice ?? 1000;
-             maxprice = maxprice ?? 2000;
+            latitude = latitude ?? "41.76401";
+            longitude = longitude ?? "-2.46883";
+            keywords = keywords ?? "quad";
+            minprice = minprice ?? 1000;
+            maxprice = maxprice ?? 2000;
 
-            // Lista para almacenar los anuncios
             List<Root> anuncios = new List<Root>();
 
-            for (int page = 0; page < 2; page++) // Número de páginas a recorrer
+            try
             {
-                var start = page * 40;
-                var response = await client.GetAsync($"{apiUrl}?keywords={keywords}&filters_source=search_box&latitude={latitude}&longitude={longitude}&min_sale_price={minprice}&max_sale_price={maxprice}&start={start}");
-                var json = await response.Content.ReadAsStringAsync();
-                var data = JObject.Parse(json);
+                // Primero hacemos una petición a la página principal para establecer cookies
+                await client.GetAsync("https://es.wallapop.com");
 
-                foreach (var item in data["search_objects"])
+                // Pequeña pausa para simular comportamiento humano
+                await Task.Delay(TimeSpan.FromMilliseconds(new Random().Next(500, 1500)));
+
+                for (int page = 0; page < 2; page++)
                 {
-                    // Crear un nuevo anuncio y llenarlo con datos
-                    var anuncio = new Root
-                    {
-                        id = item["id"].ToString(),
-                        title = item["title"].ToString(),
-                        description = item["description"].ToString(),
-                        distance = (double)item["distance"],
-                        price = (double)item["price"],
-                        currency = item["currency"].ToString(),
-                        free_shipping = (bool)item["free_shipping"],
-                        web_slug = item["web_slug"].ToString(),
-                        category_id = (int)item["category_id"],
-                        seller_id = item["seller_id"].ToString(),
-                        creation_date = (DateTime)item["creation_date"],
-                        modification_date = (DateTime)item["modification_date"],
-                        location = new Location
-                        {
-                            city = item["location"]["city"].ToString(),
-                            postal_code = item["location"]["postal_code"].ToString(),
-                            country_code = item["location"]["country_code"].ToString(),
-                        },
-                        images = new List<Image>()
-                    };
+                    var start = page * 40;
+                    var apiUrl = $"https://api.wallapop.com/api/v3/general/search?keywords={keywords}" +
+                                $"&filters_source=search_box" +
+                                $"&latitude={latitude}" +
+                                $"&longitude={longitude}" +
+                                $"&min_sale_price={minprice}" +
+                                $"&max_sale_price={maxprice}" +
+                                $"&start={start}" +
+                                $"&show_multiple_sections=false";
 
-                    // Añadir imágenes
-                    foreach (var image in item["images"])
+                    var response = await client.GetAsync(apiUrl);
+
+                    if (!response.IsSuccessStatusCode)
                     {
-                        anuncio.images.Add(new Image
-                        {
-                            original = image["original"]?.ToString(),
-                            xsmall = image["xsmall"]?.ToString(),
-                            small = image["small"]?.ToString(),
-                            large = image["large"]?.ToString(),
-                            medium = image["medium"]?.ToString(),
-                            xlarge = image["xlarge"]?.ToString(),
-                            original_width = (int)image["original_width"],
-                            original_height = (int)image["original_height"]
-                        });
+                        Console.WriteLine($"Error en la petición: {response.StatusCode}");
+                        continue;
                     }
 
-                    // Añadir el anuncio a la lista
-                    anuncios.Add(anuncio);
+                    var json = await response.Content.ReadAsStringAsync();
+                    var data = JObject.Parse(json);
+
+                    foreach (var item in data["search_objects"])
+                    {
+                        var anuncio = new Root
+                        {
+                            id = item["id"].ToString(),
+                            title = item["title"].ToString(),
+                            description = item["description"].ToString(),
+                            distance = (double)item["distance"],
+                            price = (double)item["price"],
+                            currency = item["currency"].ToString(),
+                            free_shipping = (bool)item["free_shipping"],
+                            web_slug = item["web_slug"].ToString(),
+                            category_id = (int)item["category_id"],
+                            seller_id = item["seller_id"].ToString(),
+                            creation_date = (DateTime)item["creation_date"],
+                            modification_date = (DateTime)item["modification_date"],
+                            location = new Location
+                            {
+                                city = item["location"]["city"].ToString(),
+                                postal_code = item["location"]["postal_code"].ToString(),
+                                country_code = item["location"]["country_code"].ToString(),
+                            },
+                            images = new List<Image>()
+                        };
+
+                        foreach (var image in item["images"])
+                        {
+                            anuncio.images.Add(new Image
+                            {
+                                original = image["original"]?.ToString(),
+                                xsmall = image["xsmall"]?.ToString(),
+                                small = image["small"]?.ToString(),
+                                large = image["large"]?.ToString(),
+                                medium = image["medium"]?.ToString(),
+                                xlarge = image["xlarge"]?.ToString(),
+                                original_width = (int)image["original_width"],
+                                original_height = (int)image["original_height"]
+                            });
+                        }
+
+                        anuncios.Add(anuncio);
+                    }
+
+                    // Pequeña pausa entre páginas
+                    if (page < 1) await Task.Delay(TimeSpan.FromSeconds(1));
                 }
+
+                // Mantener el mismo formato de salida por consola
+                Console.WriteLine($"Total de anuncios obtenidos: {anuncios.Count}");
+                foreach (var anuncio in anuncios)
+                {
+                    Console.WriteLine("Título: " + anuncio.title);
+                    Console.WriteLine("Descripción: " + anuncio.description);
+                    Console.WriteLine("Precio: " + anuncio.price + " " + anuncio.currency);
+                    Console.WriteLine("Ciudad: " + anuncio.location.city);
+                    Console.WriteLine("-----------------------------------");
+                }
+
+                return JsonConvert.SerializeObject(anuncios);
             }
-
-            // Imprimir el total de anuncios obtenidos
-            Console.WriteLine($"Total de anuncios obtenidos: {anuncios.Count}");
-
-            // Ejemplo: Imprimir detalles de cada anuncio
-            foreach (var anuncio in anuncios)
+            catch (Exception ex)
             {
-                Console.WriteLine("Título: " + anuncio.title);
-                Console.WriteLine("Descripción: " + anuncio.description);
-                Console.WriteLine("Precio: " + anuncio.price + " " + anuncio.currency);
-                Console.WriteLine("Ciudad: " + anuncio.location.city);
-                Console.WriteLine("-----------------------------------");
+                Console.WriteLine($"Error en la petición: {ex.Message}");
+                return JsonConvert.SerializeObject(new List<Root>());
             }
-
-            return JsonConvert.SerializeObject(anuncios);
         }
     }
-    }
+}
