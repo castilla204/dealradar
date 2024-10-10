@@ -3,78 +3,75 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json; // Para parsear JSON
-using System.Collections.Generic; // Para manejar las cookies
+using System.Collections.Generic;
+using System.Net; // Para manejar las cookies
 
 namespace DataLayer
 {
-    public class Web2Data : IWeb2Data
+    public class Web2Data: IWeb2Data
     {
-        private static readonly HttpClient client = new HttpClient();
+        private readonly HttpClient _client;
+        private CookieContainer _cookieContainer;
+        private HttpClientHandler _handler;
 
-        // Clase para representar una cookie
-        public class CookieData
+        public Web2Data()
         {
-            public string Name { get; set; }
-            public string Value { get; set; }
-            public string Domain { get; set; }
-            public string Path { get; set; }
+            _cookieContainer = new CookieContainer();
+            _handler = new HttpClientHandler
+            {
+                CookieContainer = _cookieContainer,
+                UseCookies = true
+            };
+            _client = new HttpClient(_handler);
+            SetupDefaultHeaders();
         }
 
-        // Método para hacer la solicitud
+        private void SetupDefaultHeaders()
+        {
+            _client.DefaultRequestHeaders.Add("accept", "application/json, text/plain, */*");
+            _client.DefaultRequestHeaders.Add("accept-language", "es");
+            _client.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36");
+            _client.DefaultRequestHeaders.Add("sec-ch-ua", "\"Google Chrome\";v=\"129\", \"Not=A?Brand\";v=\"8\", \"Chromium\";v=\"129\"");
+            _client.DefaultRequestHeaders.Add("sec-ch-ua-mobile", "?0");
+            _client.DefaultRequestHeaders.Add("sec-ch-ua-platform", "\"Windows\"");
+        }
+
+        private async Task GetInitialCookies()
+        {
+            // Hacer una petición inicial a la página principal para obtener las cookies
+            await _client.GetAsync("https://www.vinted.es");
+        }
+
         public async Task<string> MakeRequestAsync(string searchKey)
         {
-            // URL de la API de Vinted con los parámetros de búsqueda
-            var url = $"https://www.vinted.es/api/v2/catalog/items?page=1&per_page=96&search_text={searchKey}&catalog_ids=&size_ids=&brand_ids=&status_ids=&color_ids=&material_ids=";
-
-            // Obtener cookies del endpoint localhost:5000/cookies
-            var cookies = await FetchCookiesAsync("http://localhost:5000/cookies");
-
-            // Crear un HttpClientHandler para manejar las cookies
-            var handler = new HttpClientHandler();
-            var cookieContainer = new System.Net.CookieContainer();
-
-            // Agregar las cookies al contenedor de cookies
-            foreach (var cookie in cookies)
+            try
             {
-                cookieContainer.Add(new Uri("https://www.vinted.es"), new System.Net.Cookie(cookie.Name, cookie.Value, cookie.Path, cookie.Domain));
-            }
+                // Obtener cookies iniciales
+                await GetInitialCookies();
 
-            handler.CookieContainer = cookieContainer;
+                // Construir la URL con los parámetros
+                var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+                var url = $"https://www.vinted.es/api/v2/catalog/items?page=1&per_page=96&time={timestamp}&search_text={Uri.EscapeDataString(searchKey)}";
 
-            // Crear la instancia de HttpClient usando el handler
-            var client = new HttpClient(handler);
+                var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-            // Añadir el encabezado de la solicitud
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
+                // Añadir headers específicos de la petición
+                request.Headers.Add("sec-fetch-dest", "empty");
+                request.Headers.Add("sec-fetch-mode", "cors");
+                request.Headers.Add("sec-fetch-site", "same-origin");
+                request.Headers.Add("referer", $"https://www.vinted.es/catalog?search_text={Uri.EscapeDataString(searchKey)}");
 
-            // Realizar la solicitud y obtener la respuesta
-            var response = await client.GetAsync(url);
-            if (response.IsSuccessStatusCode)
-            {
+                // Realizar la petición
+                var response = await _client.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+
+                // Leer y devolver el contenido
                 var json = await response.Content.ReadAsStringAsync();
-                return json;
+                return await response.Content.ReadAsStringAsync();
             }
-            else
+            catch (HttpRequestException ex)
             {
-                return $"Error: {response.StatusCode}";
-            }
-        }
-
-        // Método para obtener las cookies desde el endpoint
-        private async Task<List<CookieData>> FetchCookiesAsync(string cookieUrl)
-        {
-            var response = await client.GetAsync(cookieUrl);
-            if (response.IsSuccessStatusCode)
-            {
-                var json = await response.Content.ReadAsStringAsync();
-                var cookies = JsonConvert.DeserializeObject<List<CookieData>>(json);
-                return cookies;
-            }
-            else
-            {
-                throw new Exception($"Error al obtener las cookies: {response.StatusCode}");
+                throw new Exception($"Error al realizar la petición a Vinted: {ex.Message}", ex);
             }
         }
     }

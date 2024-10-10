@@ -1,88 +1,118 @@
 ﻿using System.Net.Http.Headers;
-using System.Text;
+using System.Net;
+using DataLayer;
 
-namespace DataLayer
+public class Web1Data: IWeb1Data
 {
-    public class Web1Data : IWeb1Data
+    private readonly HttpClient _client;
+    private readonly CookieContainer _cookieContainer;
+    private readonly HttpClientHandler _handler;
+    private readonly Random _random = new Random();
+
+    public Web1Data()
     {
-        private static readonly HttpClient client = new HttpClient();
-        public async Task<string> MakeRequestAsync(int brandid, int modelid)
+        _cookieContainer = new CookieContainer();
+        _handler = new HttpClientHandler
         {
-            // URL de la API
-            var url = "https://web.gw.coches.net/search/listing";
+            CookieContainer = _cookieContainer,
+            UseCookies = true
+        };
+        _client = new HttpClient(_handler);
+    }
 
-            // Configuración de las cabeceras
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Add("x-schibsted-tenant", "coches");
+    private string GenerateSessionId()
+    {
+        return Guid.NewGuid().ToString();
+    }
 
-            // Cuerpo de la petición
-            var requestBody = new
-            {
-                pagination = new { page = 1, size = 150 },
-                sort = new { order = "desc", term = "relevance" },
-                filters = new
-                {
-                    price = new { from = (decimal?)null, to = (decimal?)null },
-                    priceRank = new object[] { },
-                    batteryCapacity = new { from = (decimal?)null, to = (decimal?)null },
-                    bodyTypeIds = new int[] { },
-                    categories = new { category1Ids = new int[] { 2500 } },
-                    chargingTimeFastMode = new { from = (decimal?)null, to = (decimal?)null },
-                    chargingTimeStandardMode = new { from = (decimal?)null, to = (decimal?)null },
-                    contractId = 0,
-                    drivenWheelsIds = new int[] { },
-                    electricAutonomy = new { from = (decimal?)null },
-                    entry = (string)null,
-                    environmentalLabels = new object[] { },
-                    equipments = new object[] { },
-                    fuelTypeIds = new int[] { },
-                    hasPhoto = (bool?)null,
-                    hasStock = (bool?)null,
-                    hasWarranty = (bool?)null,
-                    hp = new { from = (decimal?)null, to = (decimal?)null },
-                    isCertified = false,
-                    km = new { from = (decimal?)null, to = (decimal?)null },
-                    luggageCapacity = new { from = (decimal?)null, to = (decimal?)null },
-                    maxTerms = (int?)null,
-                    onlyPeninsula = false,
-                    offerTypeIds = new[] { 5, 2, 4, 0, 3 },
-                    provinceIds = new int[] { },
-                    rating = new { from = (decimal?)null, to = (decimal?)null },
-                    searchText = (string)null,
-                    sellerTypeId = 0,
-                    transmissionTypeId = 0,
-                    vehicles = new[]
-                    {
-                        new { make = (string)null, makeId = brandid, model = (string)null, modelId = modelid }
-                    },
-                    year = new { from = (int?)null, to = (int?)null }
-                }
-            };
+    private async Task GetInitialCookies()
+    {
+        await _client.GetAsync("https://www.coches.net");
+    }
 
-            // Serializar el cuerpo a JSON
-            var jsonBody = Newtonsoft.Json.JsonConvert.SerializeObject(requestBody);
+    public async Task<string> MakeRequestAsync(int brandId, int modelId)
+    {
+        try
+        {
+            await GetInitialCookies();
 
-            // Crear el contenido de la solicitud
-            var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://web.gw.coches.net/search/listing");
 
-            try
-            {
-                // Realizar la petición POST
-                var response = await client.PostAsync(url, content);
+            // Headers esenciales y que deben variar
+            request.Headers.Add("accept", "application/json, text/plain, */*");
+            request.Headers.Add("accept-language", "es-ES,es;q=0.9");
+            request.Headers.Add("cache-control", "no-cache");
+            request.Headers.Add("dnt", "1");
+            request.Headers.Add("origin", "https://www.coches.net");
+            request.Headers.Add("pragma", "no-cache");
+            request.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36");
 
-                // Comprobar si la respuesta fue exitosa
-                response.EnsureSuccessStatusCode();
+            // Headers que necesitan variar
+            var sessionId = GenerateSessionId();
+            var refererUrl = $"https://www.coches.net/segunda-mano/?MakeIds%5B0%5D={brandId}&ModelIds%5B0%5D={modelId}";
 
-                // Leer la respuesta como una cadena
-                var responseBody = await response.Content.ReadAsStringAsync();
-                return responseBody;
-            }
-            catch (HttpRequestException e)
-            {
-                Console.WriteLine($"Error en la petición: {e.Message}");
-                return null;
-            }
+            request.Headers.Add("referer", refererUrl);
+            request.Headers.Add("x-adevinta-page-url", refererUrl);
+            request.Headers.Add("x-adevinta-referer", refererUrl);
+            request.Headers.Add("x-adevinta-session-id", sessionId);
+            request.Headers.Add("x-schibsted-tenant", "coches");
+
+            // Payload exacto con solo las variaciones necesarias
+            var payload = $@"{{
+                ""pagination"":{{
+                    ""page"":1,
+                    ""size"":30
+                }},
+                ""sort"":{{
+                    ""order"":""desc"",
+                    ""term"":""relevance""
+                }},
+                ""filters"":{{
+                    ""price"":{{""from"":null,""to"":null}},
+                    ""priceRank"":[],
+                    ""batteryCapacity"":{{""from"":null,""to"":null}},
+                    ""bodyTypeIds"":[],
+                    ""categories"":{{""category1Ids"":[2500]}},
+                    ""chargingTimeFastMode"":{{""from"":null,""to"":null}},
+                    ""chargingTimeStandardMode"":{{""from"":null,""to"":null}},
+                    ""contractId"":0,
+                    ""drivenWheelsIds"":[],
+                    ""electricAutonomy"":{{""from"":null,""to"":null}},
+                    ""entry"":null,
+                    ""environmentalLabels"":[],
+                    ""equipments"":[],
+                    ""fuelTypeIds"":[],
+                    ""hasPhoto"":null,
+                    ""hasStock"":null,
+                    ""hasWarranty"":null,
+                    ""hp"":{{""from"":null,""to"":null}},
+                    ""isCertified"":false,
+                    ""km"":{{""from"":null,""to"":null}},
+                    ""luggageCapacity"":{{""from"":null,""to"":null}},
+                    ""maxTerms"":null,
+                    ""onlyPeninsula"":false,
+                    ""offerTypeIds"":[5,2,4,0,3],
+                    ""provinceIds"":[],
+                    ""rating"":{{""from"":null,""to"":null}},
+                    ""searchText"":null,
+                    ""sellerTypeId"":0,
+                    ""transmissionTypeId"":0,
+                    ""vehicles"":[{{""makeId"":{brandId},""modelId"":{modelId}}}],
+                    ""year"":{{""from"":null,""to"":null}}
+                }}
+            }}";
+
+            request.Content = new StringContent(payload, System.Text.Encoding.UTF8, "application/json");
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var response = await _client.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsStringAsync();
+        }
+        catch (HttpRequestException ex)
+        {
+            throw new Exception($"Error al realizar la petición a Coches.net: {ex.Message}", ex);
         }
     }
 }
