@@ -1,0 +1,47 @@
+{
+  "schema": {
+    "id": "string",
+    "source": "string",
+    "title": "string",
+    "description": "string",
+    "price": {
+      "amount": "number",
+      "hasTaxes": "boolean"
+    },
+    "seller": {
+      "name": "string",
+      "isProfessional": "boolean",
+      "phone": "string",
+      "rating": {
+        "score": "number",
+        "totalReviews": "number"
+      }
+    },
+    "location": {
+      "province": "string",
+      "city": "string",
+      "postalCode": "string",
+      "coordinates": {
+        "latitude": "number",
+        "longitude": "number"
+      }
+    },
+    "details": {
+      "year": "number",
+      "kilometers": "number",
+      "cubicCapacity": "number",
+      "fuelType": "string"
+    },
+    "media": {
+      "images": ["string"],
+      "videos": ["string"]
+    },
+    "dates": {
+      "createdAt": "string",
+      "publishedAt": "string"
+    },
+    "url": "string",
+    "positiveAspects": ["string"],
+    "negativeAspects": ["string"]
+  }
+}

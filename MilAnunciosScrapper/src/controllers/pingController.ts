@@ -124,7 +124,7 @@ export class ScrapingController extends Controller {
         const { searchTerms, pagesToScrap } = requestBody;
         
         // Configuration for browser connection via proxy
-        const BROWSER_WS = "wss://brd-customer-hl_83e6708b-zone-scraping_browser1:slm7mxu8j1r5@brd.superproxy.io:9222";
+        const BROWSER_WS = "wss://brd-customer-hl_ec9328b3-zone-scraping_browser1:td6no9ug0n7e@brd.superproxy.io:9222";
 
         const browser = await puppeteer.connect({
             browserWSEndpoint: BROWSER_WS,

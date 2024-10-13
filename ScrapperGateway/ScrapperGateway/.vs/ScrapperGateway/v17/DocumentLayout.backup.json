@@ -6,14 +6,14 @@
       "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web1data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb1data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web2data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb1data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web3data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -81,7 +81,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "IWeb1Data.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb1Data.cs",
               "RelativeDocumentMoniker": "..\\DataLayer\\IWeb1Data.cs",
@@ -130,13 +130,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Web3Controller.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\Web3Controller.cs",
               "RelativeDocumentMoniker": "Controllers\\Web3Controller.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\Web3Controller.cs",
               "RelativeToolTip": "Controllers\\Web3Controller.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T19:37:39.389Z",
               "EditorCaption": ""
@@ -162,7 +162,7 @@
               "RelativeDocumentMoniker": "..\\DataLayer\\Web1Data.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web1Data.cs",
               "RelativeToolTip": "..\\DataLayer\\Web1Data.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEEAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-08T16:26:51.067Z",
               "EditorCaption": ""

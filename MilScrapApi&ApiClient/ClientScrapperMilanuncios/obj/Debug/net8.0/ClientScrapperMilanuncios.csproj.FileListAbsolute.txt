@@ -55,3 +55,17 @@ C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientS
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.pdb
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.genruntimeconfig.cache
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ref\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\DnsClient.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Snappier.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
