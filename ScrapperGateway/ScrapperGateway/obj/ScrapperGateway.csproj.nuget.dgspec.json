@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -104,9 +108,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj"
-              },
               "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\ServicesLayer.csproj": {
                 "projectPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\ServicesLayer.csproj"
               }

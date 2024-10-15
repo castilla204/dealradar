@@ -8,6 +8,6 @@ namespace ServicesLayer
 {
     public interface IWeb3Service
     {
-        public Task<String> GetWallapop(string keywords, string? latitude, string? longitude, int? minprice, int? maxprice);
+        public Task<String> GetWallapop(string keywords, int pagestoscrap, string? latitude, string? longitude, int? minprice, int? maxprice);
     }
 }

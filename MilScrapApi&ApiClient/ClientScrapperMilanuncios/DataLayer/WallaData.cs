@@ -25,7 +25,7 @@ namespace ClientScrapperMilanuncios.DataLayer
 
         private async Task<bool> AdExistsAsync(string id)
         {
-            return await _grupAds.Find(ad => ad.schema.id == id).AnyAsync();
+            return await _grupAds.Find(ad => ad.id == id).AnyAsync();
         }
 
         private async Task InsertAdAsync(GrupAd ad)
@@ -33,18 +33,22 @@ namespace ClientScrapperMilanuncios.DataLayer
             await _grupAds.InsertOneAsync(ad);
         }
 
+
         public async Task DisplayMessageAsync()
         {
             var urlToPost = "http://localhost:8000/scraping";
             var bodytosendinthepost = new
             {
-                searchTerms = new string[] { "pitbike" },
-                pagesToScrap = 8
+                searchTerms = new string[] { "ferrari" },
+                pagesToScrap = 1
             };
             var jsonBody = JsonConvert.SerializeObject(bodytosendinthepost);
 
             using (HttpClient httpClient = new HttpClient())
             {
+                // Establecer timeout ilimitado
+                httpClient.Timeout = Timeout.InfiniteTimeSpan;
+
                 Console.WriteLine("Escrapeando web...");
                 HttpResponseMessage response = await httpClient.PostAsync(
                     urlToPost,
@@ -60,15 +64,15 @@ namespace ClientScrapperMilanuncios.DataLayer
                     int newAdsCount = 0;
                     foreach (var grupAd in grupAdList)
                     {
-                        if (!await AdExistsAsync(grupAd.schema.id))
+                        if (!await AdExistsAsync(grupAd.id))
                         {
                             await InsertAdAsync(grupAd);
                             newAdsCount++;
-                            Console.WriteLine($"Nuevo anuncio guardado - ID: {grupAd.schema.id}, Título: {grupAd.schema.title}");
+                            Console.WriteLine($"Nuevo anuncio guardado - ID: {grupAd.id}, Título: {grupAd.title}");
                         }
                         else
                         {
-                            Console.WriteLine($"Anuncio ya existe - ID: {grupAd.schema.id}, Título: {grupAd.schema.title}");
+                            Console.WriteLine($"Anuncio ya existe - ID: {grupAd.id}, Título: {grupAd.title}");
                         }
                     }
 
@@ -82,5 +86,6 @@ namespace ClientScrapperMilanuncios.DataLayer
                 }
             }
         }
+
     }
 }

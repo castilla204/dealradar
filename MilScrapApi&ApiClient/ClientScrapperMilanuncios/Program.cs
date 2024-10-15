@@ -3,7 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using ClientScrapperMilanuncios.DataLayer;
 
 using MongoDB.Driver;
-using ClientScrapperMilanuncios.Models.ClientScrapperMilanuncios.Mapping;
+
+using ClientScrapperMilanuncios.Models.ClientScrapperMilanuncios.Models.ClientScrapperMilanuncios.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 

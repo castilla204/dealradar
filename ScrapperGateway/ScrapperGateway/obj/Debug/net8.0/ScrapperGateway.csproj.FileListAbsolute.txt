@@ -72,6 +72,13 @@ C:\Users\Diego\source\repos\GrupGateway\ScrapperGateway\obj\Debug\net8.0\refint\
 C:\Users\Diego\source\repos\GrupGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.pdb
 C:\Users\Diego\source\repos\GrupGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.genruntimeconfig.cache
 C:\Users\Diego\source\repos\GrupGateway\ScrapperGateway\obj\Debug\net8.0\ref\ScrapperGateway.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.csproj.AssemblyReference.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.AssemblyInfoInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.AssemblyInfo.cs
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.csproj.CoreCompileInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.sourcelink.json
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\appsettings.json
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\ScrapperGateway.exe
@@ -79,6 +86,7 @@ C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGatew
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\ScrapperGateway.runtimeconfig.json
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\ScrapperGateway.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\ScrapperGateway.pdb
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -86,16 +94,8 @@ C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGatew
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\DataLayer.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\ServicesLayer.dll
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\DataLayer.pdb
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\ServicesLayer.pdb
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.csproj.AssemblyReference.cache
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.AssemblyInfoInputs.cache
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.AssemblyInfo.cs
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.csproj.CoreCompileInputs.cache
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.sourcelink.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\DataLayer.pdb
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\staticwebassets\msbuild.ScrapperGateway.Microsoft.AspNetCore.StaticWebAssets.props

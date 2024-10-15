@@ -11,16 +11,16 @@
       "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:models\\modelowallapop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\milscrapapi\u0026apiclient\\clientscrappermilanuncios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\milscrapapi\u0026apiclient\\clientscrappermilanuncios\\models\\automapperclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:models\\automapperclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\milscrapapi\u0026apiclient\\clientscrappermilanuncios\\models\\grupad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:models\\grupad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\milscrapapi\u0026apiclient\\clientscrappermilanuncios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\milscrapapi\u0026apiclient\\clientscrappermilanuncios\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -46,47 +46,45 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-13T20:07:28.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T20:07:28.279Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T19:43:07.164Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AutoMapperClass.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\Models\\AutoMapperClass.cs",
               "RelativeDocumentMoniker": "Models\\AutoMapperClass.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\Models\\AutoMapperClass.cs",
               "RelativeToolTip": "Models\\AutoMapperClass.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T19:42:12.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GrupAd.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\Models\\GrupAd.cs",
               "RelativeDocumentMoniker": "Models\\GrupAd.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\Models\\GrupAd.cs",
               "RelativeToolTip": "Models\\GrupAd.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAA2wE8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAADwvz8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-13T19:35:23.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-13T19:35:23.347Z"
             },
             {
               "$type": "Document",
@@ -96,7 +94,7 @@
               "RelativeDocumentMoniker": "Models\\ModeloWallapop.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\Models\\ModeloWallapop.cs",
               "RelativeToolTip": "Models\\ModeloWallapop.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAA6wGcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T17:34:40.013Z",
               "EditorCaption": ""
@@ -109,7 +107,7 @@
               "RelativeDocumentMoniker": "DataLayer\\WallaData.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\MilScrapApi\u0026ApiClient\\ClientScrapperMilanuncios\\DataLayer\\WallaData.cs",
               "RelativeToolTip": "DataLayer\\WallaData.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAADsAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T17:31:51.943Z",
               "EditorCaption": ""

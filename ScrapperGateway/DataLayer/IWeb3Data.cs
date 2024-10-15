@@ -11,6 +11,6 @@ namespace DataLayer
     public interface IWeb3Data
     {
 
-        public Task<String> MakeRequestAsync(string keywords, string? latitude, string? longitude, int? minprice, int? maxprice);
+        public Task<String> MakeRequestAsync(string keywords, int pagestoscrap, string? latitude, string? longitude, int? minprice, int? maxprice);
     }
 }

@@ -1,4 +1,6 @@
+using AutoMapper;
 using DataLayer;
+using DataLayer.Mapping;
 using ServicesLayer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// **AQUÍ** es donde debes registrar tus servicios
+// **Registrar AutoMapper**
+// Si tienes perfiles de mapeo, debes añadirlos aquí
+
+    builder.Services.AddAutoMapper(typeof(WallapopMappingProfile));
+
+// Registro de tus servicios
 builder.Services.AddScoped<IWeb1Data, Web1Data>(); // Registro de la capa de datos
 builder.Services.AddScoped<IWeb1Service, Web1Service>(); // Registro del servicio
 builder.Services.AddScoped<IWeb2Data, Web2Data>(); // Registro de la capa de datos

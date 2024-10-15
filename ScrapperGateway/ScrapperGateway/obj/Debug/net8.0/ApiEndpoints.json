@@ -50,6 +50,11 @@
         "IsRequired": false
       },
       {
+        "Name": "pagestoscrap",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "latitude",
         "Type": "System.String",
         "IsRequired": false

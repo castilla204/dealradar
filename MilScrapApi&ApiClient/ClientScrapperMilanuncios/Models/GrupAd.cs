@@ -46,27 +46,28 @@
         public string totalReviews { get; set; }
     }
 
-    public class GrupAd
-    {
-        public Schema schema { get; set; }
-    }
 
-    public class Schema
-    {
-        public string id { get; set; }
-        public string source { get; set; }
-        public string title { get; set; }
-        public string description { get; set; }
-        public GrupPrice GrupPrice { get; set; }
-        public Seller seller { get; set; }
-        public GrupLocation GrupLocation { get; set; }
-        public Details details { get; set; }
-        public Media media { get; set; }
-        public Dates dates { get; set; }
-        public string url { get; set; }
-        public List<string> positiveAspects { get; set; }
-        public List<string> negativeAspects { get; set; }
-    }
+        public class GrupAd
+        {
+            public string id { get; set; }
+            public string source { get; set; }
+            public string title { get; set; }
+            public string description { get; set; }
+            public GrupPrice GrupPrice { get; set; }
+            public Seller seller { get; set; }
+            public GrupLocation GrupLocation { get; set; }
+            public Details details { get; set; }
+            public Media media { get; set; }
+            public Dates dates { get; set; }
+            public string url { get; set; }
+            public string category { get; set; }
+            public List<string> positiveAspects { get; set; }
+            public List<string> negativeAspects { get; set; }
+        }
+
+    
+
+
 
     public class Seller
     {

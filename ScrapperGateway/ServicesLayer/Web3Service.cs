@@ -1,20 +1,22 @@
-﻿using DataLayer;
+﻿using AutoMapper;
+using DataLayer;
 
 namespace ServicesLayer
 {
     public class Web3Service : IWeb3Service
     {
-        private readonly IWeb3Data _web3Data = new Web3Data();
-        public Web3Service(IWeb3Data web3Data) {
-        _web3Data = web3Data;
-        }
+        private readonly IWeb3Data _web3Data;
+        private readonly IMapper _mapper;
 
-
-
-        public async Task <String> GetWallapop(string keywords, string? latitude, string? longitude, int? minprice, int? maxprice)
+        public Web3Service(IMapper mapper)
         {
-            return await _web3Data.MakeRequestAsync(keywords, latitude, longitude, minprice, maxprice);
+            _mapper = mapper;
+            _web3Data = new Web3Data(_mapper);
         }
 
+        public async Task<string> GetWallapop(string keywords, int pagestoscrap, string? latitude, string? longitude, int? minprice, int? maxprice)
+        {
+            return await _web3Data.MakeRequestAsync(keywords, pagestoscrap, latitude, longitude, minprice, maxprice);
+        }
     }
 }

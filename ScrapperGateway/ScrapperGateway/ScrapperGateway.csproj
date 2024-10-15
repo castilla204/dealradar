@@ -11,12 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
     <ProjectReference Include="..\ServicesLayer\ServicesLayer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Wallapop\" />
   </ItemGroup>
 
 </Project>
