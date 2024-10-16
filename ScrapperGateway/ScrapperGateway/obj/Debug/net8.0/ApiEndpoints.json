@@ -76,5 +76,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ScrapperGateway.Controllers.Web4Controller",
+    "Method": "GetCarListings",
+    "RelativePath": "Web4/clothesScrapper",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keywords",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

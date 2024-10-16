@@ -1,12 +1,15 @@
 ﻿using DataLayer;
+using AutoMapper;
 
 namespace ServicesLayer
 {
     public class Web2Service : IWeb2Service
     {
-        private readonly IWeb2Data _web2Data = new Web2Data();
-        public Web2Service(IWeb2Data web2Data) {
-        _web2Data = web2Data;
+        private readonly IWeb2Data _web2Data;
+        private readonly IMapper _mapper;
+        public Web2Service(IMapper mapper) {
+            _mapper = mapper;
+            _web2Data = new Web2Data(_mapper);
         }
 
 

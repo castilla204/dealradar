@@ -1,80 +1,104 @@
 ﻿namespace ClientScrapperMilanuncios.Models
 {
-    public class Coordinates
+    public class CashPrice
     {
-        public string latitude { get; set; }
-        public string longitude { get; set; }
+        public int value { get; set; }
+        public bool includeTaxes { get; set; }
     }
 
-    public class Dates
+    public class Category
     {
-        public string createdAt { get; set; }
-        public string publishedAt { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string slug { get; set; }
     }
 
-    public class Details
+    public class CategoryTree
     {
-        public string year { get; set; }
-        public string kilometers { get; set; }
-        public string cubicCapacity { get; set; }
-        public string fuelType { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string slug { get; set; }
     }
 
-    public class GrupLocation
+    public class City
     {
-        public string province { get; set; }
-        public string city { get; set; }
-        public string postalCode { get; set; }
-        public Coordinates coordinates { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string slug { get; set; }
     }
 
-    public class Media
+    public class Location
     {
-        public List<string> images { get; set; }
-        public List<string> videos { get; set; }
+        public City city { get; set; }
+        public Province province { get; set; }
+        public Region region { get; set; }
     }
 
-    public class GrupPrice
-    {
-        public string amount { get; set; }
-        public string hasTaxes { get; set; }
-    }
-
-    public class Rating
-    {
-        public string score { get; set; }
-        public string totalReviews { get; set; }
-    }
-
-
-        public class GrupAd
-        {
-            public string id { get; set; }
-            public string source { get; set; }
-            public string title { get; set; }
-            public string description { get; set; }
-            public GrupPrice GrupPrice { get; set; }
-            public Seller seller { get; set; }
-            public GrupLocation GrupLocation { get; set; }
-            public Details details { get; set; }
-            public Media media { get; set; }
-            public Dates dates { get; set; }
-            public string url { get; set; }
-            public string category { get; set; }
-            public List<string> positiveAspects { get; set; }
-            public List<string> negativeAspects { get; set; }
-        }
-
-    
-
-
-
-    public class Seller
+    public class Origin
     {
         public string name { get; set; }
-        public string isProfessional { get; set; }
-        public string phone { get; set; }
-        public Rating rating { get; set; }
+        public string provider { get; set; }
+    }
+
+    public class Price
+    {
+        public CashPrice cashPrice { get; set; }
+    }
+
+    public class Province
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string slug { get; set; }
+    }
+
+    public class Region
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string slug { get; set; }
+    }
+
+    public class Root
+    {
+        public Category category { get; set; }
+        public int categoryId { get; set; }
+        public List<CategoryTree> categoryTree { get; set; }
+        public City city { get; set; }
+        public bool contactable { get; set; }
+        public string description { get; set; }
+        public bool highlighted { get; set; }
+        public string id { get; set; }
+        public List<string> images { get; set; }
+        public bool isNew { get; set; }
+        public string isReserved { get; set; }
+        public Location location { get; set; }
+        public Origin origin { get; set; }
+        public Price price { get; set; }
+        public Province province { get; set; }
+        public DateTime publishDate { get; set; }
+        public SearchLink searchLink { get; set; }
+        public string sellerType { get; set; }
+        public string sellType { get; set; }
+        public string seoTitle { get; set; }
+        public List<Tag> tags { get; set; }
+        public string title { get; set; }
+        public string url { get; set; }
+        public int userId { get; set; }
+        public DateTime sortDate { get; set; }
+        public DateTime updateDate { get; set; }
+    }
+
+    public class SearchLink
+    {
+        public string label { get; set; }
+        public string url { get; set; }
+    }
+
+    public class Tag
+    {
+        public string type { get; set; }
+        public string text { get; set; }
     }
 
 }
