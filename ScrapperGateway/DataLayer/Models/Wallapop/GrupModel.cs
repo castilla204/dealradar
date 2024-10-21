@@ -93,6 +93,10 @@ namespace DataLayer.Models.Wallapop
         public int userId { get; set; }
         public DateTime sortDate { get; set; }
         public DateTime updateDate { get; set; }
+        public int Adscore { get; set; }
+        public int finalScore { get; set; }
+        public string goodThings { get; set; }
+        public string badThings { get; set; }
     }
 
     public class SearchLink
