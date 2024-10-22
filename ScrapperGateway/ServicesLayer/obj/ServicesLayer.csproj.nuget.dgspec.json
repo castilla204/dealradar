@@ -54,6 +54,14 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24473.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24473.5, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.30.0, )"
@@ -133,6 +141,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24473.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.0-rc.2.24473.5, )"
+            },
             "OpenAI": {
               "target": "Package",
               "version": "[2.1.0-beta.1, )"

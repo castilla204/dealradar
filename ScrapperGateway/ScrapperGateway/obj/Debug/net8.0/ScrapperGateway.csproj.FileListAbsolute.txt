@@ -133,3 +133,15 @@ C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGatew
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.Interactive.Async.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.Linq.Async.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

@@ -37,7 +37,9 @@ builder.Services.AddScoped<IWeb3Data, Web3Data>(); // Registro de la capa de dat
 builder.Services.AddScoped<IWeb3Service, Web3Service>(); // Registro del servicio
 builder.Services.AddScoped<IWeb4Data, Web4Data>(); // Registro de la capa de datos
 builder.Services.AddScoped<IWeb4Service, Web4Service>(); // Registro del servicio
-
+builder.Services.AddScoped<IWebMixerService, WebMixerService>(); // Registro de la capa de datos
+// Registro del servicio
+builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
