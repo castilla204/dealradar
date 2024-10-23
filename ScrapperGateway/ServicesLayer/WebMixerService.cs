@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
-
 using System.Threading.Tasks;
 using AutoMapper;
 using DataLayer;
@@ -39,7 +38,7 @@ public class WebMixerService : IWebMixerService
         IWeb4Data web4Data,
         IMapper mapper,
         HttpClient httpClient,
-        IConfiguration configuration)   // Inyectar IConfiguration
+        IConfiguration configuration)
     {
         _web1Data = web1Data;
         _web2Data = web2Data;
@@ -48,39 +47,31 @@ public class WebMixerService : IWebMixerService
         _mapper = mapper;
         _httpClient = httpClient;
 
-        // Obtener el API key desde la configuración
         _openAiApiKey = configuration["OpenAI:ApiKey"] ?? throw new ArgumentNullException("API Key is missing in configuration.");
     }
 
-    // Método principal para obtener los anuncios, procesarlos y devolver los mejores
     public async Task<List<AdLight>> AnalyzeAds(
         string keywords,
         string userSearch,
-        int pagestoscrape,
+        int pagesToScrape,
         string? latitude,
         string? longitude,
-        int? minprice,
-        int? maxprice,
+        int? minPrice,
+        int? maxPrice,
         int? brandId,
         int? modelId)
     {
-        // 1. Obtener los anuncios de las diferentes plataformas
-        var allAdsList = await GetAllAds(keywords, pagestoscrape, latitude, longitude, minprice, maxprice, brandId, modelId);
-
-        // 2. Mapear los anuncios al formato liviano
+        var allAdsList = await GetAllAds(keywords, pagesToScrape, latitude, longitude, minPrice, maxPrice, brandId, modelId);
         var adsLight = MapAdsToLightFormat(allAdsList);
+        var analyzed = await AnalyzeForDeals(adsLight);
 
-        // 3. Dividir los anuncios en lotes de 10
-        var batches = SplitAdsIntoBatches(adsLight);
 
-        // 4. Obtener las puntuaciones de la IA
-        var scores = await GetAdScoresFromAI(batches, userSearch);
+        var batches = SplitAdsIntoBatches(analyzed.PotentialDeals);
+        var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice);
 
-        // 5. Filtrar y obtener los mejores anuncios
         return GetBestAds(adsLight, scores);
     }
 
-    // Método para mapear los anuncios a un formato más liviano
     public List<AdLight> MapAdsToLightFormat(List<Root> allAdsList)
     {
         return allAdsList.Select(ad => new AdLight
@@ -92,70 +83,59 @@ public class WebMixerService : IWebMixerService
         }).ToList();
     }
 
-    // Método para dividir los anuncios en lotes de 10
-    public List<List<AdLight>> SplitAdsIntoBatches(List<AdLight> ads, int batchSize = 10)
+    public List<List<AdLight>> SplitAdsIntoBatches(List<AdLight> ads, int batchSize = 20)
     {
-        return ads
-            .Select((ad, index) => new { ad, index })
-            .GroupBy(x => x.index / batchSize)
-            .Select(group => group.Select(x => x.ad).ToList())
-            .ToList();
+        return ads.Select((ad, index) => new { ad, index })
+                  .GroupBy(x => x.index / batchSize)
+                  .Select(group => group.Select(x => x.ad).ToList())
+                  .ToList();
     }
 
-    // Método para generar el prompt que se enviará a la IA
-    public string GeneratePrompt(List<AdLight> adsBatch, string userSearch)
+    public string GeneratePrompt(List<AdLight> adsBatch, string userSearch, int averagePrice)
     {
         var adsString = string.Join("\n", adsBatch.Select(ad =>
             $"Ad ID: {ad.Id}\nTitle: {ad.Title}\nDescription: {ad.Description}\nPrice: {ad.Price}€\n"));
 
         return $@"
-        User is looking for: {userSearch}.
-        Evaluate the following ads based on:
-        - Relevance (ads that do not match the user's query should get a score of 0).
-        - Quality of the title and description (better condition equals a higher score) (40%).
-        - Price (better price means higher score) (40%).
-        - Fewer spelling mistakes and more recent ads are rated higher (20%).
+El usuario está buscando: {userSearch}.
+Evalúa los siguientes anuncios de motocicletas y clasifícalos según la intención de búsqueda del usuario. Concéntrate en los siguientes criterios:
 
-        Please return a list of Ad IDs with a score from 1 to 100 for each.
-        Please provide the result in the following format:
-        Ad ID: <ad_id> - Score: <score>
+1. Los anuncios que no sean una moto puntuarlos con 0. Fíjate solo en el título. 
 
-        Here are the ads:
+2. Ten en cuenta lo que está buscando el usuario y asigna puntuaciones bajas a los anuncios que no cumplen con lo que busca.
 
-        {adsString}
-        ";
+3. Relaciona el precio y la información del título y descripción para valorar el anuncio. Si no hay información negativa sobre la moto y el precio es bajo, otorgar buena puntuación.
+
+Aquí están los anuncios:
+{adsString}
+Devuelve el resultado en este formato:
+Ad ID: <ad_id> - Score: <score>
+
+
+";
     }
 
-    // Método para obtener las puntuaciones desde la IA en paralelo
-    public async Task<List<(string Id, int Score)>> GetAdScoresFromAI(List<List<AdLight>> adBatches, string userSearch)
+    public async Task<List<(string Id, int Score)>> GetAdScoresFromAI(List<List<AdLight>> adBatches, string userSearch, int averagePrice)
     {
         var tasks = adBatches.Select(async batch =>
         {
-            var prompt = GeneratePrompt(batch, userSearch);
+            var prompt = GeneratePrompt(batch, userSearch, averagePrice);
             var response = await SendOpenAIRequestAsync(prompt);
-            var scores = ParseAiResponse(response);
-            return scores;
+            return ParseAiResponse(response);
         });
 
-        // Esperar que todas las tareas de puntuación finalicen
         var results = await Task.WhenAll(tasks);
-
-        // Retornar todas las puntuaciones en una lista combinada
         return results.SelectMany(r => r).ToList();
     }
 
-    // Método para enviar el request directamente a la API de OpenAI
     private async Task<string> SendOpenAIRequestAsync(string prompt)
     {
         var requestBody = new
         {
             model = "gpt-3.5-turbo",
-            messages = new[]
-            {
-            new { role = "user", content = prompt }
-        },
-            max_tokens = 150,
-            temperature = 0.7
+            messages = new[] { new { role = "user", content = prompt } },
+            max_tokens = 300,
+            temperature = 0.5
         };
 
         var requestJson = JsonSerializer.Serialize(requestBody);
@@ -163,32 +143,20 @@ public class WebMixerService : IWebMixerService
 
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _openAiApiKey);
         var response = await _httpClient.PostAsync("https://api.openai.com/v1/chat/completions", content);
-
         response.EnsureSuccessStatusCode();
 
-        try
-        {
-            var responseJson = await response.Content.ReadAsStringAsync();
-            var responseObject = JsonSerializer.Deserialize<JsonElement>(responseJson);
-            return responseObject.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
-        }
-        catch (Exception ex)
-        {
-            // Manejo de errores o logging
-            throw new Exception("Error parsing OpenAI response", ex);
-        }
-
+        var responseJson = await response.Content.ReadAsStringAsync();
+        var responseObject = JsonSerializer.Deserialize<JsonElement>(responseJson);
+        return responseObject.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
     }
 
-    // Método para parsear la respuesta de la IA y extraer los IDs y puntuaciones
     public List<(string Id, int Score)> ParseAiResponse(string aiResponse)
     {
         var scores = new List<(string, int)>();
-        var lines = aiResponse.Split('\n');
+        var lines = aiResponse.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var line in lines)
         {
-            // Verifica si la línea contiene "Ad ID:" y tiene un formato válido
             if (line.Contains("Ad ID:") && line.Contains("Score:"))
             {
                 try
@@ -203,92 +171,218 @@ public class WebMixerService : IWebMixerService
                 }
                 catch (Exception ex)
                 {
-                    // Puedes hacer un log del error o ignorar las líneas mal formateadas
                     Console.WriteLine($"Error parsing line: {line}. Exception: {ex.Message}");
                 }
-            }
-            else
-            {
-                // Log o manejo si la línea no tiene el formato esperado
-                Console.WriteLine($"Skipping line: {line}, does not contain expected format.");
             }
         }
         return scores;
     }
 
-
-    // Método para filtrar y ordenar los anuncios según sus puntuaciones
     public List<AdLight> GetBestAds(List<AdLight> ads, List<(string Id, int Score)> scoredAds)
     {
-        // Filtrar duplicados manteniendo solo la primera aparición
         var uniqueScoredAds = scoredAds
             .GroupBy(x => x.Id)
-            .Select(g => g.First()) // Selecciona la primera aparición en caso de duplicados
+            .Select(g => g.First())
             .ToDictionary(x => x.Id, x => x.Score);
 
-        // Filtrar anuncios con puntuación mayor a 0 y ordenarlos por la puntuación
-        var topads = ads
-            .Where(ad => uniqueScoredAds.ContainsKey(ad.Id) && uniqueScoredAds[ad.Id] > 0)
+        return ads
+            .Where(ad => uniqueScoredAds.TryGetValue(ad.Id, out var score) && score > 0)
             .OrderByDescending(ad => uniqueScoredAds[ad.Id])
             .ToList();
-
-        return topads;
     }
 
-
-    // Método  para obtener todos los anuncios de las 4 plataformas
-    public async Task<List<Root>> GetAllAds(string keywords, int pagestoscrape, string? latitude, string? longitude, int? minprice, int? maxprice, int? brandId, int? modelId)
+    public async Task<List<Root>> GetAllAds(string keywords, int pagesToScrape, string? latitude, string? longitude, int? minPrice, int? maxPrice, int? brandId, int? modelId)
     {
-        //var fetchWeb1 = FetchAdsFromWeb1(brandId, modelId);
         var fetchWeb2 = FetchAdsFromWeb2(keywords);
-        var fetchWeb3 = FetchAdsFromWeb3(keywords, pagestoscrape, latitude, longitude, minprice, maxprice);
-        //var fetchWeb4 = FetchAdsFromWeb4(keywords);
+        var fetchWeb3 = FetchAdsFromWeb3(keywords, pagesToScrape, latitude, longitude, minPrice, maxPrice);
 
-        // Ejecutar todas las llamadas en paralelo
-        var allResults = await Task.WhenAll(/*fetchWeb1*/ fetchWeb2, fetchWeb3 /*fetchWeb4*/);
-
-        // Combinar todos los resultados
+        var allResults = await Task.WhenAll(fetchWeb2, fetchWeb3);
         return allResults.SelectMany(x => x).ToList();
     }
 
-    // Métodos simulados para extraer los anuncios de cada plataforma
-    //public async Task<List<Root>> FetchAdsFromWeb1(int? brandId, int? modelId)
-    //{
-    //    if (brandId != null && modelId != null)
-    //    {
-    //        string jsonResponse = await _web1Data.MakeRequestAsync(brandId ?? 0, modelId ?? 0);
-
-    //        List<Root> ads = JsonSerializer.Deserialize<List<Root>>(jsonResponse);
-
-    //        return ads;
-    //    }
-    //    return new List<Root>();
-    //}
-
-    // Método para obtener anuncios de la Web2 (simulando recibir un JSON)
     public async Task<List<Root>> FetchAdsFromWeb2(string keywords)
     {
         string jsonResponse = await _web2Data.MakeRequestAsync(keywords);
-        List<Root> ads = JsonSerializer.Deserialize<List<Root>>(jsonResponse);
-
-        return ads;
+        return JsonSerializer.Deserialize<List<Root>>(jsonResponse) ?? new List<Root>();
     }
 
-    // Método para obtener anuncios de la Web3 (simulando recibir un JSON)
-    public async Task<List<Root>> FetchAdsFromWeb3(string keywords, int pagestoscrape, string? latitude, string? longitude, int? minprice, int? maxprice)
+    public async Task<List<Root>> FetchAdsFromWeb3(string keywords, int pagesToScrape, string? latitude, string? longitude, int? minPrice, int? maxPrice)
     {
-        string jsonResponse = await _web3Data.MakeRequestAsync(keywords, pagestoscrape, latitude, longitude, minprice ?? 0, maxprice ?? 999999999);
-        List<Root> ads = JsonSerializer.Deserialize<List<Root>>(jsonResponse);
-
-        return ads;
+        string jsonResponse = await _web3Data.MakeRequestAsync(keywords, pagesToScrape, latitude, longitude, minPrice ?? 0, maxPrice ?? int.MaxValue);
+        return JsonSerializer.Deserialize<List<Root>>(jsonResponse) ?? new List<Root>();
     }
 
-    // Método para obtener anuncios de la Web4 (simulando recibir un JSON)
-    //public async Task<List<Root>> FetchAdsFromWeb4(string keywords)
-    //{
-    //    string jsonResponse = await _web4Data.MakeRequestAsync(keywords);
-    //    List<Root> ads = JsonSerializer.Deserialize<List<Root>>(jsonResponse);
 
-    //    return ads;
-    //}
+
+
+
+
+    //ANALISIS OFFLINE DE ANUNCIOS
+    public class AdAnalysis
+    {
+        public double AveragePrice { get; set; }
+        public double MedianPrice { get; set; }
+        public double PriceStandardDeviation { get; set; }
+        public Dictionary<string, int> KeywordFrequency { get; set; }
+        public List<AdLight> PotentialDeals { get; set; }
+        public Dictionary<string, double> PricePercentiles { get; set; }
+        public List<AdLight> OutlierDeals { get; set; }
+        public Dictionary<string, List<AdLight>> PriceBrackets { get; set; }
+    }
+    public async Task<AdAnalysis> AnalyzeForDeals(List<AdLight> ads)
+    {
+        var analysis = new AdAnalysis
+        {
+            KeywordFrequency = CalculateKeywordFrequency(ads),
+            PricePercentiles = CalculatePricePercentiles(ads),
+            PriceBrackets = CreatePriceBrackets(ads)
+        };
+
+        // Calcular estadísticas básicas de precios
+        var prices = ads.Select(ad => ad.Price).ToList();
+        analysis.AveragePrice = prices.Average();
+        analysis.MedianPrice = CalculateMedian(prices);
+        analysis.PriceStandardDeviation = CalculateStandardDeviation(prices);
+
+        // Identificar chollos potenciales basados en múltiples criterios
+        analysis.PotentialDeals = IdentifyPotentialDeals(ads, analysis);
+        analysis.OutlierDeals = IdentifyPriceOutliers(ads, analysis);
+
+        return analysis;
+    }
+
+    private Dictionary<string, int> CalculateKeywordFrequency(List<AdLight> ads)
+    {
+        var keywords = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var ad in ads)
+        {
+            var words = ad.Title.Split(' ')
+                .Concat(ad.Description.Split(' '))
+                .Select(w => w.ToLower())
+                .Where(w => w.Length > 3);  // Ignorar palabras muy cortas
+
+            foreach (var word in words)
+            {
+                if (!keywords.ContainsKey(word))
+                    keywords[word] = 0;
+                keywords[word]++;
+            }
+        }
+
+        return keywords.OrderByDescending(x => x.Value)
+                      .Take(50)
+                      .ToDictionary(x => x.Key, x => x.Value);
+    }
+
+    private double CalculateMedian(List<int> numbers)
+    {
+        var sorted = numbers.OrderBy(n => n).ToList();
+        int mid = sorted.Count / 2;
+        return sorted.Count % 2 == 0
+            ? (sorted[mid - 1] + sorted[mid]) / 2.0
+            : sorted[mid];
+    }
+
+    private double CalculateStandardDeviation(List<int> numbers)
+    {
+        double average = numbers.Average();
+        double sumOfSquares = numbers.Sum(n => Math.Pow(n - average, 2));
+        return Math.Sqrt(sumOfSquares / (numbers.Count - 1));
+    }
+
+    private Dictionary<string, double> CalculatePricePercentiles(List<AdLight> ads)
+    {
+        var prices = ads.Select(a => a.Price).OrderBy(p => p).ToList();
+        return new Dictionary<string, double>
+        {
+            {"p10", CalculatePercentile(prices, 10)},
+            {"p25", CalculatePercentile(prices, 25)},
+            {"p50", CalculatePercentile(prices, 50)},
+            {"p75", CalculatePercentile(prices, 75)},
+            {"p90", CalculatePercentile(prices, 90)}
+        };
+    }
+
+    private double CalculatePercentile(List<int> numbers, int percentile)
+    {
+        var sorted = numbers.OrderBy(n => n).ToList();
+        int index = (int)Math.Ceiling((percentile / 100.0) * sorted.Count) - 1;
+        return sorted[Math.Max(0, Math.Min(index, sorted.Count - 1))];
+    }
+
+    private Dictionary<string, List<AdLight>> CreatePriceBrackets(List<AdLight> ads)
+    {
+        var brackets = new Dictionary<string, List<AdLight>>();
+        var prices = ads.Select(a => a.Price);
+        var min = prices.Min();
+        var max = prices.Max();
+        var range = (max - min) / 5.0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            var lowerBound = min + (range * i);
+            var upperBound = min + (range * (i + 1));
+            var bracketName = $"{lowerBound:C0}-{upperBound:C0}";
+
+            brackets[bracketName] = ads.Where(a =>
+                a.Price >= lowerBound &&
+                (i == 4 ? a.Price <= upperBound : a.Price < upperBound)
+            ).ToList();
+        }
+
+        return brackets;
+    }
+
+    private List<AdLight> IdentifyPotentialDeals(List<AdLight> ads, AdAnalysis analysis)
+    {
+        return ads.Where(ad =>
+        {
+            // Un anuncio se considera chollo potencial si cumple varios criterios
+            bool isPriceBelowAverage = ad.Price < analysis.AveragePrice * 0.8;
+            bool isPriceOutlier = ad.Price < (analysis.MedianPrice - analysis.PriceStandardDeviation);
+            bool hasPositiveKeywords = ContainsPositiveKeywords(ad);
+            bool isNotSuspiciouslyLow = ad.Price > analysis.AveragePrice * 0.3;
+
+            return isPriceBelowAverage && isNotSuspiciouslyLow &&
+                   (isPriceOutlier || hasPositiveKeywords);
+        })
+        .OrderBy(ad => ad.Price)
+        .ToList();
+    }
+
+    private List<AdLight> IdentifyPriceOutliers(List<AdLight> ads, AdAnalysis analysis)
+    {
+        var lowerBound = analysis.MedianPrice - (2 * analysis.PriceStandardDeviation);
+
+        return ads.Where(ad =>
+            ad.Price < lowerBound &&
+            ad.Price > analysis.AveragePrice * 0.3 &&  // Evitar precios sospechosamente bajos
+            !ContainsNegativeKeywords(ad)
+        ).ToList();
+    }
+
+    private bool ContainsPositiveKeywords(AdLight ad)
+    {
+        var positiveKeywords = new[] {
+            "nuevo", "seminuevo", "garantía", "revisión", "mantenimiento",
+            "impecable", "cuidado", "único dueño", "como nuevo"
+        };
+
+        return positiveKeywords.Any(keyword =>
+            ad.Title.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+            ad.Description.Contains(keyword, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private bool ContainsNegativeKeywords(AdLight ad)
+    {
+        var negativeKeywords = new[] {
+            "averiado", "accidentado", "golpe", "roto", "despiece",
+            "no funciona", "para piezas", "sin documentación"
+        };
+
+        return negativeKeywords.Any(keyword =>
+            ad.Title.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+            ad.Description.Contains(keyword, StringComparison.OrdinalIgnoreCase));
+    }
 }

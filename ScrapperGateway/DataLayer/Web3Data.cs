@@ -72,7 +72,7 @@ namespace DataLayer
                 for (int page = 0; page < pagestoscrap; page++)
                 {
                     var start = page * 40;
-                    var apiUrl = $"https://api.wallapop.com/api/v3/general/search?keywords={keywords}" +
+                    var apiUrl = $"https://api.wallapop.com/api/v3/general/search?category_ids=14000&keywords={keywords}" +
                                  $"&filters_source=search_box" +
                                  $"&latitude={latitude}" +
                                  $"&longitude={longitude}" +
