@@ -132,9 +132,9 @@ Ad ID: <ad_id> - Score: <score>
     {
         var requestBody = new
         {
-            model = "gpt-3.5-turbo",
+            model = "gpt-4o-mini",
             messages = new[] { new { role = "user", content = prompt } },
-            max_tokens = 300,
+            max_tokens = 500,
             temperature = 0.5
         };
 
@@ -193,10 +193,11 @@ Ad ID: <ad_id> - Score: <score>
 
     public async Task<List<Root>> GetAllAds(string keywords, int pagesToScrape, string? latitude, string? longitude, int? minPrice, int? maxPrice, int? brandId, int? modelId)
     {
-        var fetchWeb2 = FetchAdsFromWeb2(keywords);
+        //var fetchWeb2 = FetchAdsFromWeb2(keywords);
         var fetchWeb3 = FetchAdsFromWeb3(keywords, pagesToScrape, latitude, longitude, minPrice, maxPrice);
+        var fetchWeb4 = FetchAdsFromWeb4(keywords, pagesToScrape);
 
-        var allResults = await Task.WhenAll(fetchWeb2, fetchWeb3);
+        var allResults = await Task.WhenAll(fetchWeb3, fetchWeb4);
         return allResults.SelectMany(x => x).ToList();
     }
 
@@ -211,6 +212,60 @@ Ad ID: <ad_id> - Score: <score>
         string jsonResponse = await _web3Data.MakeRequestAsync(keywords, pagesToScrape, latitude, longitude, minPrice ?? 0, maxPrice ?? int.MaxValue);
         return JsonSerializer.Deserialize<List<Root>>(jsonResponse) ?? new List<Root>();
     }
+
+
+
+    public async Task<List<Root>> FetchAdsFromWeb4(string keyword, int pagesToScrape)
+    {
+        var url = "https://localhost:7184/api/MilAds/scrape";
+
+        // Crear el cuerpo de la solicitud JSON
+        var requestBody = new
+        {
+            searchTerms = new List<string> { keyword },
+            pagesToScrape = pagesToScrape
+        };
+
+        var jsonContent = JsonSerializer.Serialize(requestBody);
+        var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+        Console.WriteLine("Realizando solicitud a la API Web4...");
+
+        try
+        {
+            HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                try
+                {
+                    string result = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Response: {result}");
+                    List<Root> lista = await _web4Data.GetAnunciosAsync(keyword);
+                    return lista;
+                
+                }catch(Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+        }
+        catch (TaskCanceledException)
+        {
+            Console.WriteLine("La solicitud ha tardado demasiado y ha sido cancelada.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+
+        return new List<Root>();
+    }
+
 
 
 

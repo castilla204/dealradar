@@ -115,6 +115,109 @@ export interface Tag {
 
 @Route('scraping')
 export class ScrapingController extends Controller {
+    private readonly CONCURRENT_PAGES = 15; // Adjust based on your needs and server capacity
+    private readonly BROWSER_WS = "wss://brd-customer-hl_8e4e9ffe-zone-scraping_browser1:s86gsxq17cjo@brd.superproxy.io:9222";
+
+    private async createBrowserPage() {
+        const browser = await puppeteer.connect({
+            browserWSEndpoint: this.BROWSER_WS,
+        });
+        return await browser.newPage();
+    }
+
+    private cleanAndFixJson(jsonString: string): any {
+        try {
+            let cleanedJson = jsonString
+                .replace(/\\\\/g, '\\')
+                .replace(/\\\"/g, '"')
+                .replace(/\\n/g, ' ')
+                .replace(/\\r/g, ' ')
+                .replace(/\\t/g, ' ');
+
+            cleanedJson = cleanedJson.replace(/"([^"]*?)"/g, (match, p1) => {
+                const escapedString = p1.replace(/"/g, '\\"');
+                return `"${escapedString}"`;
+            });
+
+            cleanedJson = cleanedJson.replace(/\\u([0-9A-Fa-f]{4})/g, (match, p1) => {
+                return String.fromCharCode(parseInt(p1, 16));
+            });
+
+            cleanedJson = cleanedJson
+                .replace(/€|\\u20AC/g, '€')
+                .replace(/�/g, '');
+
+            return JSON.parse(cleanedJson);
+        } catch (error) {
+            console.error("Error trying to fix JSON:", error);
+            return null;
+        }
+    }
+
+    private async scrapePage(search: string, pageNumber: number): Promise<Ad[]> {
+        const page = await this.createBrowserPage();
+        try {
+            const url = `https://www.milanuncios.com/anuncios/?s=${encodeURIComponent(search)}&orden=relevance&fromSearch=1&hitOrigin=home_search&pagina=${pageNumber}`;
+            await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+            
+            // Random delay between 1-3 seconds
+            await new Promise(resolve => setTimeout(resolve, Math.random() * 2000 + 1000));
+            
+            const pageContent = await page.content();
+            let pFrom = pageContent.indexOf('{\\\"ads\\\":');
+            let pTo = pageContent.indexOf('}]}', pFrom + 1);
+            let jsonString = pageContent.substring(pFrom, pTo + 3);
+
+            const jsonObject = this.cleanAndFixJson(jsonString);
+            console.log(`Scraped search: ${search}, page: ${pageNumber}`);
+            
+            return jsonObject?.ads || [];
+        } catch (error) {
+            console.error(`Error scraping search: ${search}, page: ${pageNumber}:`, error);
+            return [];
+        } finally {
+            await page.browser().close();
+        }
+    }
+
+    private generateScrapeJobs(searchTerms: string[], pagesToScrap: number): Array<{ search: string, page: number }> {
+        const jobs: Array<{ search: string, page: number }> = [];
+        for (const search of searchTerms) {
+            for (let page = 1; page <= pagesToScrap; page++) {
+                jobs.push({ search, page });
+            }
+        }
+        return this.shuffleArray(jobs);
+    }
+
+    private shuffleArray<T>(array: T[]): T[] {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    private async scrapeInBatches(jobs: Array<{ search: string, page: number }>) {
+        const results: Ad[] = [];
+        
+        for (let i = 0; i < jobs.length; i += this.CONCURRENT_PAGES) {
+            const batch = jobs.slice(i, i + this.CONCURRENT_PAGES);
+            const batchResults = await Promise.all(
+                batch.map(job => this.scrapePage(job.search, job.page))
+            );
+            
+            results.push(...batchResults.flat());
+            
+            // Add a small delay between batches to avoid overwhelming the server
+            if (i + this.CONCURRENT_PAGES < jobs.length) {
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+        }
+        
+        return results;
+    }
+
     /**
      * Scrapes ads from MilAnuncios based on search terms
      * @param requestBody Contains search terms and number of pages to scrape
@@ -123,111 +226,17 @@ export class ScrapingController extends Controller {
     public async scrapeAds(@Body() requestBody: ScrapingRequest): Promise<Ad[]> {
         const { searchTerms, pagesToScrap } = requestBody;
         
-        // Configuration for browser connection via proxy
-        const BROWSER_WS = "wss://brd-customer-hl_ec9328b3-zone-scraping_browser1:td6no9ug0n7e@brd.superproxy.io:9222";
-
-        const browser = await puppeteer.connect({
-            browserWSEndpoint: BROWSER_WS,
-        });
-
-        const page = await browser.newPage();
-        let allAds: Ad[] = [];
-
-        // Tracking objects
-        let searchPageCounts: { [key: string]: number } = {};
-        let scrapedPages: { [key: string]: Set<number> } = {};
-        searchTerms.forEach(search => {
-            searchPageCounts[search] = 0;
-            scrapedPages[search] = new Set();
-        });
-
-        const getNextSearch = (currentIndex: number): string => {
-            return searchTerms[currentIndex % searchTerms.length];
-        };
-
-        const getRandomPageNumber = (search: string): number | null => {
-            const availablePages = Array.from({ length: pagesToScrap }, (_, i) => i + 1)
-                .filter(page => !scrapedPages[search].has(page));
-
-            if (availablePages.length === 0) {
-                return null;
-            }
-
-            const randomPage = availablePages[Math.floor(Math.random() * availablePages.length)];
-            scrapedPages[search].add(randomPage);
-            return randomPage;
-        };
-
-        const cleanAndFixJson = (jsonString: string): any => {
-            try {
-                let cleanedJson = jsonString
-                    .replace(/\\\\/g, '\\')
-                    .replace(/\\\"/g, '"')
-                    .replace(/\\n/g, ' ')
-                    .replace(/\\r/g, ' ')
-                    .replace(/\\t/g, ' ');
-
-                cleanedJson = cleanedJson.replace(/"([^"]*?)"/g, (match, p1) => {
-                    const escapedString = p1.replace(/"/g, '\\"');
-                    return `"${escapedString}"`;
-                });
-
-                cleanedJson = cleanedJson.replace(/\\u([0-9A-Fa-f]{4})/g, (match, p1) => {
-                    return String.fromCharCode(parseInt(p1, 16));
-                });
-
-                cleanedJson = cleanedJson
-                    .replace(/€|\\u20AC/g, '€')
-                    .replace(/�/g, '');
-
-                return JSON.parse(cleanedJson);
-            } catch (error) {
-                console.error("Error trying to fix JSON:", error);
-                return null;
-            }
-        };
-
-        let currentSearchIndex = 0;
-        let totalScrapedPages = 0;
-        const totalPagesToScrap = searchTerms.length * pagesToScrap;
-
-        while (totalScrapedPages < totalPagesToScrap) {
-            const search = getNextSearch(currentSearchIndex);
-            const pageNumber = getRandomPageNumber(search);
-
-            if (pageNumber === null) {
-                currentSearchIndex++;
-                continue;
-            }
-
-            try {
-                searchPageCounts[search]++;
-                totalScrapedPages++;
-
-                const url = `https://www.milanuncios.com/anuncios/?s=${search}&orden=relevance&fromSearch=1&hitOrigin=home_search&pagina=${pageNumber}`;
-                await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
-                const pageContent = await page.content();
-                await new Promise(resolve => setTimeout(resolve, Math.random() * 4000 + 3000));
-
-                let pFrom = pageContent.indexOf('{\\\"ads\\\":');
-                let pTo = pageContent.indexOf('}]}', pFrom + 1);
-                let jsonString = pageContent.substring(pFrom, pTo + 3);
-
-                const jsonObject = cleanAndFixJson(jsonString);
-
-                if (jsonObject && jsonObject.ads) {
-                    allAds = allAds.concat(jsonObject.ads);
-                }
-
-                console.log(`Scraped search: ${search}, page: ${pageNumber}`);
-            } catch (error) {
-                console.error(`Error scraping search: ${search}, page: ${pageNumber}`, error);
-            }
-
-            currentSearchIndex++;
-        }
-
-        await browser.close();
-        return allAds;
+        // Generate all scraping jobs
+        const jobs = this.generateScrapeJobs(searchTerms, pagesToScrap);
+        
+        // Execute scraping jobs in parallel batches
+        const allAds = await this.scrapeInBatches(jobs);
+        
+        // Remove duplicates based on ad ID
+        const uniqueAds = Array.from(
+            new Map(allAds.map(ad => [ad.id, ad])).values()
+        );
+        
+        return uniqueAds;
     }
 }

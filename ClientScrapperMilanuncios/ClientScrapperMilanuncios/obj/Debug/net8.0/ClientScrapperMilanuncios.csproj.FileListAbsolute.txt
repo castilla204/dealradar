@@ -1,0 +1,217 @@
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.json
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.exe
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.deps.json
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.runtimeconfig.json
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.AssemblyReference.cache
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfoInputs.cache
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfo.cs
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.CoreCompileInputs.cache
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.ClientScrapperMilanuncios.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.build.ClientScrapperMilanuncios.props
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClientScrapperMilanuncios.props
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClientScrapperMilanuncios.props
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\scopedcss\bundle\ClientScrapperMilanuncios.styles.css
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientSc.7D7F4F1D.Up2Date
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\refint\ClientScrapperMilanuncios.dll
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.genruntimeconfig.cache
+C:\Users\Diego\source\repos\ClientScrapperMilanuncios\obj\Debug\net8.0\ref\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.exe
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.deps.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.runtimeconfig.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.AssemblyReference.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfoInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfo.cs
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.CoreCompileInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.sourcelink.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.ClientScrapperMilanuncios.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.build.ClientScrapperMilanuncios.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClientScrapperMilanuncios.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClientScrapperMilanuncios.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\scopedcss\bundle\ClientScrapperMilanuncios.styles.css
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientSc.7D7F4F1D.Up2Date
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\refint\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.genruntimeconfig.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ref\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\DnsClient.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Snappier.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.exe
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.deps.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.runtimeconfig.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\DnsClient.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Snappier.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.AssemblyReference.cache
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfoInputs.cache
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfo.cs
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.CoreCompileInputs.cache
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.sourcelink.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.ClientScrapperMilanuncios.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.build.ClientScrapperMilanuncios.props
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClientScrapperMilanuncios.props
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClientScrapperMilanuncios.props
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\scopedcss\bundle\ClientScrapperMilanuncios.styles.css
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientSc.7D7F4F1D.Up2Date
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\refint\ClientScrapperMilanuncios.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.genruntimeconfig.cache
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ref\ClientScrapperMilanuncios.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\dcastilla\Desktop\GRUP\MilScrapApi&ApiClient\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.json
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.exe
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.deps.json
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.runtimeconfig.json
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\DnsClient.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Snappier.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.AssemblyReference.cache
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfoInputs.cache
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfo.cs
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.CoreCompileInputs.cache
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.ClientScrapperMilanuncios.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.build.ClientScrapperMilanuncios.props
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClientScrapperMilanuncios.props
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClientScrapperMilanuncios.props
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\scopedcss\bundle\ClientScrapperMilanuncios.styles.css
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientSc.7D7F4F1D.Up2Date
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\refint\ClientScrapperMilanuncios.dll
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.genruntimeconfig.cache
+C:\Users\Diego\Downloads\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ref\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\appsettings.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.exe
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.deps.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.runtimeconfig.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\DnsClient.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Snappier.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.AssemblyReference.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfoInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.AssemblyInfo.cs
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.csproj.CoreCompileInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.sourcelink.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.ClientScrapperMilanuncios.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.build.ClientScrapperMilanuncios.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClientScrapperMilanuncios.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClientScrapperMilanuncios.props
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\scopedcss\bundle\ClientScrapperMilanuncios.styles.css
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientSc.7D7F4F1D.Up2Date
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\refint\ClientScrapperMilanuncios.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.pdb
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ClientScrapperMilanuncios.genruntimeconfig.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ClientScrapperMilanuncios\ClientScrapperMilanuncios\obj\Debug\net8.0\ref\ClientScrapperMilanuncios.dll

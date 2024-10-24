@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.Models.Wallapop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace DataLayer
     {
 
         public Task<String> MakeRequestAsync(string keywords);
+        public Task<List<Root>> GetAnunciosAsync(string keyword);
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataLayer.Models.Wallapop
+﻿namespace ClientScrapperMilanuncios.Models
 {
     public class CashPrice
     {
@@ -97,7 +91,7 @@ namespace DataLayer.Models.Wallapop
         public int finalScore { get; set; }
         public string goodThings { get; set; }
         public string badThings { get; set; }
-        public DateTime ScrappedDate { get; set; }
+        public DateTime ScrappedDate { get; set;  }
     }
 
     public class SearchLink
@@ -111,4 +105,5 @@ namespace DataLayer.Models.Wallapop
         public string type { get; set; }
         public string text { get; set; }
     }
+
 }
