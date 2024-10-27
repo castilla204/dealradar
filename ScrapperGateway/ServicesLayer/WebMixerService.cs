@@ -21,6 +21,12 @@ public class AdLight
     public int Price { get; set; }
 }
 
+public class Categorys
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
 public class WebMixerService : IWebMixerService
 {
     private readonly IWeb1Data _web1Data;
@@ -30,6 +36,10 @@ public class WebMixerService : IWebMixerService
     private readonly IMapper _mapper;
     private readonly HttpClient _httpClient;
     private readonly string _openAiApiKey;
+    private readonly List<Categorys> categorias;
+
+
+
 
     public WebMixerService(
         IWeb1Data web1Data,
@@ -48,12 +58,25 @@ public class WebMixerService : IWebMixerService
         _httpClient = httpClient;
 
         _openAiApiKey = configuration["OpenAI:ApiKey"] ?? throw new ArgumentNullException("API Key is missing in configuration.");
+
+        //categorias = new List<Categorys>
+        //    {
+        //    new Categorys { Id = 1, Name = "Coches" },
+        //    new Categorys { Id = 2, Name = "Motos" },
+        //    new Categorys { Id= 3, Name= "Inmobiliaria"},
+        //    new Categorys { Id = 4, Name = "Moda" },
+        //};
+
+
+
+
     }
 
     public async Task<List<AdLight>> AnalyzeAds(
         string keywords,
         string userSearch,
         int pagesToScrape,
+        int? category,
         string? latitude,
         string? longitude,
         int? minPrice,
@@ -61,13 +84,13 @@ public class WebMixerService : IWebMixerService
         int? brandId,
         int? modelId)
     {
-        var allAdsList = await GetAllAds(keywords, pagesToScrape, latitude, longitude, minPrice, maxPrice, brandId, modelId);
+        var allAdsList = await GetAllAds(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice, brandId, modelId);
         var adsLight = MapAdsToLightFormat(allAdsList);
         var analyzed = await AnalyzeForDeals(adsLight);
 
 
         var batches = SplitAdsIntoBatches(analyzed.PotentialDeals);
-        var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice);
+        var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice, category);
 
         return GetBestAds(adsLight, scores);
     }
@@ -91,35 +114,141 @@ public class WebMixerService : IWebMixerService
                   .ToList();
     }
 
-    public string GeneratePrompt(List<AdLight> adsBatch, string userSearch, int averagePrice)
+    public string GeneratePrompt(List<AdLight> adsBatch, string userSearch, int averagePrice, int? category)
     {
         var adsString = string.Join("\n", adsBatch.Select(ad =>
-            $"Ad ID: {ad.Id}\nTitle: {ad.Title}\nDescription: {ad.Description}\nPrice: {ad.Price}€\n"));
+            $"ID: {ad.Id}\nTítulo: {ad.Title}\nDescripción: {ad.Description}\nPrecio: {ad.Price}€\n"));
 
-        return $@"
-El usuario está buscando: {userSearch}.
-Evalúa los siguientes anuncios de motocicletas y clasifícalos según la intención de búsqueda del usuario. Concéntrate en los siguientes criterios:
+        // Base criteria that applies to all categories
+        var baseCriteria = $@"
+        CONTEXTO Y ESTADÍSTICAS DEL MERCADO:
+        - Búsqueda del usuario: '{userSearch}'
+        - Precio medio del mercado: {averagePrice}€
+        - Rango de precios considerado chollo: Por debajo del {averagePrice * 0.6}€
+        - Precio mínimo aceptable (para evitar estafas): {averagePrice * 0.2}€";
 
-1. Los anuncios que no sean una moto puntuarlos con 0. Fíjate solo en el título. 
+        // Category-specific criteria
+        string categoryCriteria = category switch
+        {
+            1 => @"
+        CRITERIOS ESPECÍFICOS PARA COCHES:
+        - Valorar positivamente:
+            * Kilometraje bajo para el año del vehículo
+            * Libro de mantenimiento al día
+            * ITV reciente y en vigor
+            * Un solo propietario
+            * Historial de servicio oficial
+        - Penalizar:
+            * Kilometraje excesivo (>200,000 km)
+            * Ausencia de documentación importante
+            * Menciones a problemas mecánicos
+            * ITV caducada o próxima a caducar",
 
-2. Ten en cuenta lo que está buscando el usuario y asigna puntuaciones bajas a los anuncios que no cumplen con lo que busca.
+            2 => @"
+        CRITERIOS ESPECÍFICOS PARA MOTOS:
+        - Valorar positivamente:
+            * Kilometraje bajo para el año
+            * Revisiones al día
+            * ITV en vigor
+            * Neumáticos en buen estado
+            * Guardada en garaje
+        - Penalizar:
+            * Kilometraje alto (>50,000 km)
+            * Caídas o golpes
+            * Modificaciones no homologadas
+            * Problemas de motor o transmisión",
 
-3. Relaciona el precio y la información del título y descripción para valorar el anuncio. Si no hay información negativa sobre la moto y el precio es bajo, otorgar buena puntuación.
+            3 => @"
+        CRITERIOS ESPECÍFICOS PARA INMOBILIARIA:
+        - Valorar positivamente:
+            * Precio por m² inferior a la media de la zona
+            * Buena ubicación mencionada
+            * Reformas recientes
+            * Características extra (parking, trastero, etc)
+            * Orientación y luminosidad
+        - Penalizar:
+            * Ausencia de metros cuadrados en descripción
+            * Necesidad de reforma integral
+            * Problemas estructurales mencionados
+            * Falta de documentación o situaciones legales complejas",
 
-Aquí están los anuncios:
-{adsString}
-Devuelve el resultado en este formato:
-Ad ID: <ad_id> - Score: <score>
+            4 => @"
+        CRITERIOS ESPECÍFICOS PARA MODA:
+        - Valorar positivamente:
+            * Artículos nuevos con etiqueta
+            * Marcas premium a precio reducido
+            * Ediciones limitadas o exclusivas
+            * Descripción detallada del estado
+        - Penalizar:
+            * Daños o defectos significativos
+            * Falta de información sobre talla/medidas
+            * Signos de desgaste excesivo
+            * Posibles falsificaciones",
 
+            _ => "" // Categoría no específica
+        };
 
-";
+        return $@"Actúa como un experto analista de mercado especializado en identificar chollos y buenas ofertas en anuncios de segunda mano.
+
+        {baseCriteria}
+
+        {categoryCriteria}
+
+        SEÑALES POSITIVAS GENERALES A VALORAR:
+        - Palabras clave positivas: nuevo, seminuevo, garantía, revisión, mantenimiento, impecable, cuidado, único dueño, como nuevo
+        - Precio por debajo del 80% de la media del mercado
+        - Descripción detallada y profesional
+        - Menciones de mantenimiento o cuidados
+        - Garantías o posibilidad de prueba
+
+        SEÑALES NEGATIVAS GENERALES A PENALIZAR:
+        - Palabras clave negativas: averiado, accidentado, golpe, roto, despiece, no funciona, para piezas, sin documentación
+        - Precio sospechosamente bajo (menos del 30% de la media)
+        - Descripción vaga o incompleta
+        - Señales de posible estafa o producto en mal estado
+
+        TAREA:
+        Analiza cada anuncio y asigna una puntuación del 0 al 100 basándote en los siguientes criterios:
+
+        1. RELEVANCIA (0 o 100):
+        - Si el anuncio NO corresponde a la categoría buscada, asigna 0 puntos y detén el análisis
+        - Si corresponde, continúa con los siguientes criterios
+
+        2. COINCIDENCIA CON BÚSQUEDA (0-20 puntos):
+        - Evalúa qué tan bien coincide el artículo con lo que busca el usuario
+        - Considera palabras clave específicas y variantes
+
+        3. RELACIÓN CALIDAD-PRECIO (0-50 puntos):
+        - Compara el precio con la media del mercado ({averagePrice}€)
+        - Otorga máxima puntuación a precios entre 30-80% de la media con señales positivas
+        - Penaliza fuertemente precios por debajo del 30% de la media
+        - Valora el estado y características mencionadas según los criterios específicos de la categoría
+
+        4. CALIDAD DE INFORMACIÓN (0-30 puntos):
+        - Evalúa la completitud y claridad de la descripción
+        - Busca señales positivas específicas de la categoría
+        - Penaliza señales de alerta según la categoría
+    
+        ANUNCIOS A EVALUAR:
+        {adsString}
+
+        FORMATO DE RESPUESTA:
+        Responde ÚNICAMENTE con el siguiente formato para cada anuncio:
+        Ad ID: <id> -Score: <puntuación>
+
+        IMPORTANTE:
+        - NO incluyas explicaciones ni comentarios adicionales
+        - Solo números enteros del 0 al 100
+        - Un anuncio por línea
+        - Mantén estrictamente el formato especificado
+        - Prioriza identificar CHOLLOS REALES: buenas ofertas con precio significativamente bajo pero no sospechoso";
     }
 
-    public async Task<List<(string Id, int Score)>> GetAdScoresFromAI(List<List<AdLight>> adBatches, string userSearch, int averagePrice)
+    public async Task<List<(string Id, int Score)>> GetAdScoresFromAI(List<List<AdLight>> adBatches, string userSearch, int averagePrice, int? category)
     {
         var tasks = adBatches.Select(async batch =>
         {
-            var prompt = GeneratePrompt(batch, userSearch, averagePrice);
+            var prompt = GeneratePrompt(batch, userSearch, averagePrice, category);
             var response = await SendOpenAIRequestAsync(prompt);
             return ParseAiResponse(response);
         });
@@ -191,13 +320,21 @@ Ad ID: <ad_id> - Score: <score>
             .ToList();
     }
 
-    public async Task<List<Root>> GetAllAds(string keywords, int pagesToScrape, string? latitude, string? longitude, int? minPrice, int? maxPrice, int? brandId, int? modelId)
+    public async Task<List<Root>> GetAllAds(string keywords, int pagesToScrape, int? category, string? latitude, string? longitude, int? minPrice, int? maxPrice, int? brandId, int? modelId)
     {
-        //var fetchWeb2 = FetchAdsFromWeb2(keywords);
-        var fetchWeb3 = FetchAdsFromWeb3(keywords, pagesToScrape, latitude, longitude, minPrice, maxPrice);
-        var fetchWeb4 = FetchAdsFromWeb4(keywords, pagesToScrape);
+        List<Task<List<Root>>> tasks = new List<Task<List<Root>>>();
 
-        var allResults = await Task.WhenAll(fetchWeb3, fetchWeb4);
+        // Solo añadir FetchAdsFromWeb2 si la categoría es 4 (moda)
+        if (category == 4)
+        {
+            tasks.Add(FetchAdsFromWeb2(keywords));
+        }
+
+        // Añadir siempre las otras tareas
+        tasks.Add(FetchAdsFromWeb3(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice));
+        tasks.Add(FetchAdsFromWeb4(keywords, pagesToScrape, category));
+
+        var allResults = await Task.WhenAll(tasks);
         return allResults.SelectMany(x => x).ToList();
     }
 
@@ -207,23 +344,61 @@ Ad ID: <ad_id> - Score: <score>
         return JsonSerializer.Deserialize<List<Root>>(jsonResponse) ?? new List<Root>();
     }
 
-    public async Task<List<Root>> FetchAdsFromWeb3(string keywords, int pagesToScrape, string? latitude, string? longitude, int? minPrice, int? maxPrice)
+    public async Task<List<Root>> FetchAdsFromWeb3(string keywords, int pagesToScrape, int? category ,string? latitude, string? longitude, int? minPrice, int? maxPrice)
     {
-        string jsonResponse = await _web3Data.MakeRequestAsync(keywords, pagesToScrape, latitude, longitude, minPrice ?? 0, maxPrice ?? int.MaxValue);
+        int categoryInt = 0;
+        if (category == 1)
+        {
+            categoryInt = 100;
+        }
+        if (category == 2)
+        {
+            categoryInt = 14000;
+        }
+        if (category == 3)
+        {
+            categoryInt = 200;
+        }
+        if (category == 4)
+        {
+            categoryInt = 12465;
+        }
+
+
+        string jsonResponse = await _web3Data.MakeRequestAsync(keywords, pagesToScrape, categoryInt, latitude, longitude, minPrice ?? 0, maxPrice ?? int.MaxValue);
         return JsonSerializer.Deserialize<List<Root>>(jsonResponse) ?? new List<Root>();
     }
 
 
 
-    public async Task<List<Root>> FetchAdsFromWeb4(string keyword, int pagesToScrape)
+    public async Task<List<Root>> FetchAdsFromWeb4(string keyword, int pagesToScrape, int? category)
     {
+        string categoryString = "";
+        if(category == 1)
+        {
+            categoryString = "coches-de-segunda-mano";
+        }if(category == 2)
+        {
+            categoryString = "motos-de-segunda-mano";
+        }if(category == 3)
+        {
+            categoryString = "inmobiliaria";
+        }if(category == 4)
+        {
+            categoryString = "moda-y-complementos";
+        }
+
+
+
         var url = "https://localhost:7184/api/MilAds/scrape";
+        
 
         // Crear el cuerpo de la solicitud JSON
         var requestBody = new
         {
             searchTerms = new List<string> { keyword },
-            pagesToScrape = pagesToScrape
+            pagesToScrape = pagesToScrape,
+            category = categoryString
         };
 
         var jsonContent = JsonSerializer.Serialize(requestBody);

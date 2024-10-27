@@ -8,7 +8,7 @@ namespace ServicesLayer
 {
     public interface IWebMixerService
     {
-        public Task<List<AdLight>> AnalyzeAds(string keywords, string userSearch, int pagestoscrape, string? latitude, string? longitude, int? minprice, int? maxprice, int? brandId, int? modelId);
+        public Task<List<AdLight>> AnalyzeAds(string keywords, string userSearch, int pagestoscrape, int? category,  string? latitude, string? longitude, int? minprice, int? maxprice, int? brandId, int? modelId);
 
 
     }

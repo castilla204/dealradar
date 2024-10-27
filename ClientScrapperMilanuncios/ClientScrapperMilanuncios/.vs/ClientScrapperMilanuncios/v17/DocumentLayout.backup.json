@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\clientscrappermilanuncios\\clientscrappermilanuncios\\models\\grupad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:models\\grupad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\clientscrappermilanuncios\\clientscrappermilanuncios\\controller\\miladsclientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:controller\\miladsclientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\clientscrappermilanuncios\\clientscrappermilanuncios\\models\\grupad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|solutionrelative:models\\grupad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A7486056-C3CE-48E3-8DB7-B2490E4ED4ED}|ClientScrapperMilanuncios.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\clientscrappermilanuncios\\clientscrappermilanuncios\\datalayer\\miladsclientdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GrupAd.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios\\Models\\GrupAd.cs",
               "RelativeDocumentMoniker": "Models\\GrupAd.cs",
@@ -62,8 +62,7 @@
               "RelativeToolTip": "Models\\GrupAd.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAkwGUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T06:55:04.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T06:55:04.021Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-24T15:38:31.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T15:38:31.096Z"
             },
             {
               "$type": "Document",
@@ -92,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MilAdsClientController.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios\\Controller\\MilAdsClientController.cs",
               "RelativeDocumentMoniker": "Controller\\MilAdsClientController.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios\\Controller\\MilAdsClientController.cs",
               "RelativeToolTip": "Controller\\MilAdsClientController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T07:00:23.261Z",
               "EditorCaption": ""
@@ -137,8 +135,7 @@
               "RelativeToolTip": "DataLayer\\MilAdsClientData.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAIwEkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T06:53:46.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T06:53:46.822Z"
             }
           ]
         }

@@ -386,6 +386,9 @@
 					"pagesToScrap": {
 						"type": "number",
 						"format": "double"
+					},
+					"category": {
+						"type": "string"
 					}
 				},
 				"required": [
@@ -425,17 +428,17 @@
 						}
 					}
 				},
-				"description": "Scrapes ads from MilAnuncios based on search terms",
+				"description": "Scrapes ads from MilAnuncios based on search terms and optional category",
 				"security": [],
 				"parameters": [],
 				"requestBody": {
-					"description": "Contains search terms and number of pages to scrape",
+					"description": "Contains search terms, number of pages to scrape, and optional category",
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
 								"$ref": "#/components/schemas/ScrapingRequest",
-								"description": "Contains search terms and number of pages to scrape"
+								"description": "Contains search terms, number of pages to scrape, and optional category"
 							}
 						}
 					}

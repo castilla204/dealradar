@@ -14,9 +14,9 @@ namespace ServicesLayer
             _web3Data = new Web3Data(_mapper);
         }
 
-        public async Task<string> GetWallapop(string keywords, int pagestoscrap, string? latitude, string? longitude, int? minprice, int? maxprice)
+        public async Task<string> GetWallapop(string keywords, int pagestoscrap, int? category, string? latitude, string? longitude, int? minprice, int? maxprice)
         {
-            return await _web3Data.MakeRequestAsync(keywords, pagestoscrap, latitude, longitude, minprice, maxprice);
+            return await _web3Data.MakeRequestAsync(keywords, pagestoscrap, category, latitude, longitude, minprice, maxprice);
         }
     }
 }

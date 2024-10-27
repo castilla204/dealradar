@@ -1,15 +1,12 @@
 import { Body, Controller, Post, Route } from 'tsoa';
-import puppeteer from 'puppeteer-extra';
+import puppeteerExtra from 'puppeteer-extra';
+import * as puppeteer from 'puppeteer-core';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
 // Use Puppeteer Stealth plugin to avoid bot detection
-puppeteer.use(StealthPlugin());
+puppeteerExtra.use(StealthPlugin());
 
 // Interfaces
-export interface ScrapingRequest {
-    searchTerms: string[];
-    pagesToScrap: number;
-}
 
 export interface Ad {
     category: Category;
@@ -113,23 +110,41 @@ export interface Tag {
     text: string;
 }
 
+export interface ScrapingRequest {
+    searchTerms: string[];
+    pagesToScrap: number;
+    category?: string; // Nuevo parámetro opcional
+}
+
+// Mantener las demás interfaces y clases igual...
+
 @Route('scraping')
 export class ScrapingController extends Controller {
-    private readonly CONCURRENT_PAGES = 15; // Adjust based on your needs and server capacity
-    private readonly BROWSER_WS = "wss://brd-customer-hl_8e4e9ffe-zone-scraping_browser1:s86gsxq17cjo@brd.superproxy.io:9222";
+    private readonly CONCURRENT_PAGES = 15;
+    private readonly BROWSER_WS = "wss://brd-customer-hl_116e4d7f-zone-scraping_browser1:kmvsoe51ypuo@brd.superproxy.io:9222";
 
     private async createBrowserPage() {
-        const browser = await puppeteer.connect({
+        const browser = await puppeteerExtra.connect({
             browserWSEndpoint: this.BROWSER_WS,
         });
-        return await browser.newPage();
+        const page = await browser.newPage();
+        await page.setRequestInterception(true);
+        page.on('request', (request: puppeteer.HTTPRequest) => {
+            if (['image', 'stylesheet'].includes(request.resourceType())) {
+                request.abort();
+            } else {
+                request.continue();
+            }
+        });
+
+        return page;
     }
 
     private cleanAndFixJson(jsonString: string): any {
         try {
             let cleanedJson = jsonString
                 .replace(/\\\\/g, '\\')
-                .replace(/\\\"/g, '"')
+                .replace(/\\"/g, '"')
                 .replace(/\\n/g, ' ')
                 .replace(/\\r/g, ' ')
                 .replace(/\\t/g, ' ');
@@ -154,10 +169,14 @@ export class ScrapingController extends Controller {
         }
     }
 
-    private async scrapePage(search: string, pageNumber: number): Promise<Ad[]> {
+    private async scrapePage(search: string, pageNumber: number, category?: string): Promise<Ad[]> {
         const page = await this.createBrowserPage();
         try {
-            const url = `https://www.milanuncios.com/anuncios/?s=${encodeURIComponent(search)}&orden=relevance&fromSearch=1&hitOrigin=home_search&pagina=${pageNumber}`;
+            let url = `https://www.milanuncios.com/anuncios/?s=${encodeURIComponent(search)}&orden=relevance&fromSearch=1&hitOrigin=home_search&pagina=${pageNumber}`;
+            if (category) {
+                url += `&category=${encodeURIComponent(category)}`;
+            }
+
             await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
             
             // Random delay between 1-3 seconds
@@ -180,11 +199,11 @@ export class ScrapingController extends Controller {
         }
     }
 
-    private generateScrapeJobs(searchTerms: string[], pagesToScrap: number): Array<{ search: string, page: number }> {
-        const jobs: Array<{ search: string, page: number }> = [];
+    private generateScrapeJobs(searchTerms: string[], pagesToScrap: number, category?: string): Array<{ search: string, page: number, category?: string }> {
+        const jobs: Array<{ search: string, page: number, category?: string }> = [];
         for (const search of searchTerms) {
             for (let page = 1; page <= pagesToScrap; page++) {
-                jobs.push({ search, page });
+                jobs.push({ search, page, category });
             }
         }
         return this.shuffleArray(jobs);
@@ -198,18 +217,17 @@ export class ScrapingController extends Controller {
         return array;
     }
 
-    private async scrapeInBatches(jobs: Array<{ search: string, page: number }>) {
+    private async scrapeInBatches(jobs: Array<{ search: string, page: number, category?: string }>) {
         const results: Ad[] = [];
         
         for (let i = 0; i < jobs.length; i += this.CONCURRENT_PAGES) {
             const batch = jobs.slice(i, i + this.CONCURRENT_PAGES);
             const batchResults = await Promise.all(
-                batch.map(job => this.scrapePage(job.search, job.page))
+                batch.map(job => this.scrapePage(job.search, job.page, job.category))
             );
             
             results.push(...batchResults.flat());
             
-            // Add a small delay between batches to avoid overwhelming the server
             if (i + this.CONCURRENT_PAGES < jobs.length) {
                 await new Promise(resolve => setTimeout(resolve, 2000));
             }
@@ -219,15 +237,15 @@ export class ScrapingController extends Controller {
     }
 
     /**
-     * Scrapes ads from MilAnuncios based on search terms
-     * @param requestBody Contains search terms and number of pages to scrape
+     * Scrapes ads from MilAnuncios based on search terms and optional category
+     * @param requestBody Contains search terms, number of pages to scrape, and optional category
      */
     @Post('/')
     public async scrapeAds(@Body() requestBody: ScrapingRequest): Promise<Ad[]> {
-        const { searchTerms, pagesToScrap } = requestBody;
+        const { searchTerms, pagesToScrap, category } = requestBody;
         
         // Generate all scraping jobs
-        const jobs = this.generateScrapeJobs(searchTerms, pagesToScrap);
+        const jobs = this.generateScrapeJobs(searchTerms, pagesToScrap, category);
         
         // Execute scraping jobs in parallel batches
         const allAds = await this.scrapeInBatches(jobs);

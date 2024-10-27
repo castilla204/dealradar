@@ -174,6 +174,7 @@ const models: TsoaRoute.Models = {
         "properties": {
             "searchTerms": {"dataType":"array","array":{"dataType":"string"},"required":true},
             "pagesToScrap": {"dataType":"double","required":true},
+            "category": {"dataType":"string"},
         },
         "additionalProperties": false,
     },

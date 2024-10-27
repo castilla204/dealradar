@@ -15,6 +15,7 @@ namespace DataLayer
         private readonly string mpid;
         private const string APP_VERSION = "83070";
         private readonly IMapper _mapper;
+        private string categoryString;
 
         public Web3Data(IMapper mapper)
         {
@@ -54,13 +55,14 @@ namespace DataLayer
             client.DefaultRequestHeaders.Add("sec-ch-ua-platform", "\"Windows\"");
         }
 
-        public async Task<string> MakeRequestAsync(string keywords, int pagestoscrap, string? latitude, string? longitude, int? minprice, int? maxprice)
+        public async Task<string> MakeRequestAsync(string keywords, int pagestoscrap, int? category, string? latitude, string? longitude, int? minprice, int? maxprice)
         {
             latitude = latitude ?? "41.76401";
             longitude = longitude ?? "-2.46883";
             keywords = keywords ?? "quad";
             minprice = minprice ?? 1000;
             maxprice = maxprice ?? 2000;
+            category = category ?? 0; 
 
             List<DataLayer.Models.Wallapop.Root> anuncios = new List<DataLayer.Models.Wallapop.Root>();
 
@@ -71,8 +73,11 @@ namespace DataLayer
 
                 for (int page = 0; page < pagestoscrap; page++)
                 {
+                    if(category != 0) { 
+                         categoryString = $"category_ids={category}";
+                    }
                     var start = page * 40;
-                    var apiUrl = $"https://api.wallapop.com/api/v3/general/search?category_ids=14000&keywords={keywords}" +
+                    var apiUrl = $"https://api.wallapop.com/api/v3/general/search?{categoryString}&keywords={keywords}" +
                                  $"&filters_source=search_box" +
                                  $"&latitude={latitude}" +
                                  $"&longitude={longitude}" +

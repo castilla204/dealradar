@@ -15,12 +15,12 @@ namespace ScrapperGateway.Controllers
         }
 
         [HttpGet("clothesScrapper")]
-        public async Task<IActionResult> GetCarListings(string keywords, int pagestoscrap,string? latitude, string? longitude, int? minprice, int? maxprice)
+        public async Task<IActionResult> GetCarListings(string keywords, int pagestoscrap, int? category, string? latitude, string? longitude, int? minprice, int? maxprice)
         {
             // Agregar registros para la depuración
             Console.WriteLine($"Received keywords: {keywords}, latitude: {latitude}, longitude: {longitude}, minprice: {minprice}, maxprice: {maxprice}");
 
-            var jsonResponse = await _web3Service.GetWallapop(keywords, pagestoscrap, latitude, longitude, minprice, maxprice);
+            var jsonResponse = await _web3Service.GetWallapop(keywords, pagestoscrap, category,  latitude, longitude, minprice, maxprice);
 
             // Comprobar si la respuesta JSON está vacía o es un array vacío
             if (string.IsNullOrEmpty(jsonResponse) || jsonResponse == "[]")

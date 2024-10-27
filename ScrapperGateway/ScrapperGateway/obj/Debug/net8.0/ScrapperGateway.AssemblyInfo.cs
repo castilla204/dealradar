@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScrapperGateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9c1a86492a8758bfe91c63edc9f3fecebe48c93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5eabd1d44e41897b20cf2c3df650860fa510bda1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScrapperGateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScrapperGateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

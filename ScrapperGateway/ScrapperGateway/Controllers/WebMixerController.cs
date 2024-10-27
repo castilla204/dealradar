@@ -15,9 +15,9 @@ namespace ScrapperGateway.Controllers
             _webMixerService = webMixerService;
         }
         [HttpGet("GetBestAds")]
-        public async Task<IActionResult> GetBestAds(string keywords, string userSearch, int pagestoscrape, string? latitude, string? longitude, int? minprice, int? maxprice, int? brandId, int? modelId)
+        public async Task<IActionResult> GetBestAds(string keywords, string userSearch, int pagestoscrape, int? category,string? latitude, string? longitude, int? minprice, int? maxprice, int? brandId, int? modelId)
         {
-            var adsList = await _webMixerService.AnalyzeAds(keywords, userSearch, pagestoscrape, latitude, longitude, minprice, maxprice, brandId, modelId);
+            var adsList = await _webMixerService.AnalyzeAds(keywords, userSearch, pagestoscrape, category, latitude, longitude, minprice, maxprice, brandId, modelId);
 
             if (adsList == null || !adsList.Any())
             {
