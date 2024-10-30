@@ -37,6 +37,8 @@ public class WebMixerService : IWebMixerService
     private readonly HttpClient _httpClient;
     private readonly string _openAiApiKey;
     private readonly List<Categorys> categorias;
+    private  List<AdLight> potentialDeals;
+    private List<Root> allAdsList;
 
 
 
@@ -56,6 +58,7 @@ public class WebMixerService : IWebMixerService
         _web4Data = web4Data;
         _mapper = mapper;
         _httpClient = httpClient;
+        potentialDeals = new();
 
         _openAiApiKey = configuration["OpenAI:ApiKey"] ?? throw new ArgumentNullException("API Key is missing in configuration.");
 
@@ -72,7 +75,7 @@ public class WebMixerService : IWebMixerService
 
     }
 
-    public async Task<List<AdLight>> AnalyzeAds(
+    public async Task<List<Root>> AnalyzeAds(
         string keywords,
         string userSearch,
         int pagesToScrape,
@@ -84,15 +87,16 @@ public class WebMixerService : IWebMixerService
         int? brandId,
         int? modelId)
     {
-        var allAdsList = await GetAllAds(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice, brandId, modelId);
+        allAdsList = await GetAllAds(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice, brandId, modelId);
         var adsLight = MapAdsToLightFormat(allAdsList);
         var analyzed = await AnalyzeForDeals(adsLight);
+        potentialDeals = analyzed.PotentialDeals;
+        List<string> DealsIdList = potentialDeals.Select(deal => deal.Id).ToList();
+        var batches = SplitAdsIntoBatches(adsLight);
+        var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice, category, DealsIdList);
 
-
-        var batches = SplitAdsIntoBatches(analyzed.PotentialDeals);
-        var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice, category);
-
-        return GetBestAds(adsLight, scores);
+        var hola= GetBestAds(adsLight, scores);
+        return hola;
     }
 
     public List<AdLight> MapAdsToLightFormat(List<Root> allAdsList)
@@ -114,16 +118,19 @@ public class WebMixerService : IWebMixerService
                   .ToList();
     }
 
-    public string GeneratePrompt(List<AdLight> adsBatch, string userSearch, int averagePrice, int? category)
+    public string GeneratePrompt(List<AdLight> adsBatch, string userSearch, int averagePrice, int? category, List<String> DealIdList)
     {
         var adsString = string.Join("\n", adsBatch.Select(ad =>
             $"ID: {ad.Id}\nTítulo: {ad.Title}\nDescripción: {ad.Description}\nPrecio: {ad.Price}€\n"));
+
+        var dealIdsString = $"IDs de ofertas potenciales: {string.Join(", ", DealIdList)}\n";
 
         // Base criteria that applies to all categories
         var baseCriteria = $@"
         CONTEXTO Y ESTADÍSTICAS DEL MERCADO:
         - Búsqueda del usuario: '{userSearch}'
         - Precio medio del mercado: {averagePrice}€
+        - Chollos: {dealIdsString}
         - Rango de precios considerado chollo: Por debajo del {averagePrice * 0.6}€
         - Precio mínimo aceptable (para evitar estafas): {averagePrice * 0.2}€";
 
@@ -133,6 +140,7 @@ public class WebMixerService : IWebMixerService
             1 => @"
         CRITERIOS ESPECÍFICOS PARA COCHES:
         - Valorar positivamente:
+  
             * Kilometraje bajo para el año del vehículo
             * Libro de mantenimiento al día
             * ITV reciente y en vigor
@@ -212,6 +220,7 @@ public class WebMixerService : IWebMixerService
 
         1. RELEVANCIA (0 o 100):
         - Si el anuncio NO corresponde a la categoría buscada, asigna 0 puntos y detén el análisis
+        - Si el id del anuncio corresponde con uno de los id chollo entonces este anuncio tendra minimo un 100
         - Si corresponde, continúa con los siguientes criterios
 
         2. COINCIDENCIA CON BÚSQUEDA (0-20 puntos):
@@ -232,23 +241,25 @@ public class WebMixerService : IWebMixerService
         ANUNCIOS A EVALUAR:
         {adsString}
 
-        FORMATO DE RESPUESTA:
-        Responde ÚNICAMENTE con el siguiente formato para cada anuncio:
-        Ad ID: <id> -Score: <puntuación>
+       FORMATO DE RESPUESTA:
+Responde ÚNICAMENTE con el siguiente formato para cada anuncio:
+Ad ID: <id> - Score: <puntuación>
+Positivos: [lista de aspectos positivos separados por coma]
+Negativos: [lista de aspectos negativos separados por coma]
 
-        IMPORTANTE:
-        - NO incluyas explicaciones ni comentarios adicionales
-        - Solo números enteros del 0 al 100
-        - Un anuncio por línea
-        - Mantén estrictamente el formato especificado
-        - Prioriza identificar CHOLLOS REALES: buenas ofertas con precio significativamente bajo pero no sospechoso";
+IMPORTANTE:
+- NO incluyas explicaciones ni comentarios adicionales
+- Solo números enteros del 0 al 100 para el puntaje
+- Un anuncio por línea, con listas en formato indicado
+- Mantén estrictamente el formato especificado";
     }
 
-    public async Task<List<(string Id, int Score)>> GetAdScoresFromAI(List<List<AdLight>> adBatches, string userSearch, int averagePrice, int? category)
+    public async Task<List<(string Id, int Score, List<string> Positives, List<string> Negatives)>> GetAdScoresFromAI(
+     List<List<AdLight>> adBatches, string userSearch, int averagePrice, int? category, List<string> DealsIdList)
     {
         var tasks = adBatches.Select(async batch =>
         {
-            var prompt = GeneratePrompt(batch, userSearch, averagePrice, category);
+            var prompt = GeneratePrompt(batch, userSearch, averagePrice, category, DealsIdList);
             var response = await SendOpenAIRequestAsync(prompt);
             return ParseAiResponse(response);
         });
@@ -279,10 +290,14 @@ public class WebMixerService : IWebMixerService
         return responseObject.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
     }
 
-    public List<(string Id, int Score)> ParseAiResponse(string aiResponse)
+    public List<(string Id, int Score, List<string> Positives, List<string> Negatives)> ParseAiResponse(string aiResponse)
     {
-        var scores = new List<(string, int)>();
+        var results = new List<(string, int, List<string>, List<string>)>();
         var lines = aiResponse.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        string id = "";
+        int score = 0;
+        List<string> positives = new List<string>();
+        List<string> negatives = new List<string>();
 
         foreach (var line in lines)
         {
@@ -291,51 +306,94 @@ public class WebMixerService : IWebMixerService
                 try
                 {
                     var parts = line.Split('-');
-                    if (parts.Length >= 2)
-                    {
-                        var id = parts[0].Split(':')[1].Trim();
-                        var score = int.Parse(parts[1].Split(':')[1].Trim());
-                        scores.Add((id, score));
-                    }
+                    id = parts[0].Split(':')[1].Trim();
+                    score = int.Parse(parts[1].Split(':')[1].Trim());
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error parsing line: {line}. Exception: {ex.Message}");
                 }
             }
+            else if (line.StartsWith("Positivos:"))
+            {
+                positives = line.Substring(line.IndexOf(':') + 1)
+                    .Split(',')
+                    .Select(p => p.Trim())
+                    .ToList();
+            }
+            else if (line.StartsWith("Negativos:"))
+            {
+                negatives = line.Substring(line.IndexOf(':') + 1)
+                    .Split(',')
+                    .Select(n => n.Trim())
+                    .ToList();
+
+                if (!string.IsNullOrEmpty(id))
+                {
+                    results.Add((id, score, positives, negatives));
+                    id = ""; score = 0;
+                    positives = new List<string>();
+                    negatives = new List<string>();
+                }
+            }
         }
-        return scores;
+        return results;
     }
 
-    public List<AdLight> GetBestAds(List<AdLight> ads, List<(string Id, int Score)> scoredAds)
-    {
-        var uniqueScoredAds = scoredAds
-            .GroupBy(x => x.Id)
-            .Select(g => g.First())
-            .ToDictionary(x => x.Id, x => x.Score);
 
-        return ads
-            .Where(ad => uniqueScoredAds.TryGetValue(ad.Id, out var score) && score > 0)
-            .OrderByDescending(ad => uniqueScoredAds[ad.Id])
+
+    public List<Root> GetBestAds(List<AdLight> ads, List<(string Id, int Score, List<string> Positives, List<string> Negatives)> scoredAds)
+    {
+        // Crear un diccionario único que mapea el ID con la tupla completa de score, positivos y negativos.
+        var scoreDictionary = scoredAds.ToDictionary(ad => ad.Id, ad => (ad.Score, ad.Positives, ad.Negatives));
+
+        // Asignar las puntuaciones finales y detalles a los anuncios en un solo bucle
+        foreach (var item in allAdsList)
+        {
+            if (scoreDictionary.TryGetValue(item.id, out var details))
+            {
+                item.finalScore = details.Score;
+                item.goodThings = details.Positives;
+                item.badThings = details.Negatives;
+            }
+            else
+            {
+                item.finalScore = 0;
+                item.goodThings = new List<string>();
+                item.badThings = new List<string>();
+            }
+        }
+
+        // Ordenar la lista por finalScore en orden descendente
+        return allAdsList
+            .OrderByDescending(ad => ad.finalScore)
             .ToList();
     }
 
+
     public async Task<List<Root>> GetAllAds(string keywords, int pagesToScrape, int? category, string? latitude, string? longitude, int? minPrice, int? maxPrice, int? brandId, int? modelId)
     {
-        List<Task<List<Root>>> tasks = new List<Task<List<Root>>>();
-
-        // Solo añadir FetchAdsFromWeb2 si la categoría es 4 (moda)
-        if (category == 4)
+        try
         {
-            tasks.Add(FetchAdsFromWeb2(keywords));
+            List<Task<List<Root>>> tasks = new List<Task<List<Root>>>();
+
+            // Solo añadir FetchAdsFromWeb2 si la categoría es 4 (moda)
+            if (category == 4)
+            {
+                tasks.Add(FetchAdsFromWeb2(keywords));
+            }
+
+            // Añadir siempre las otras tareas
+
+            tasks.Add(FetchAdsFromWeb3(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice));
+            tasks.Add(FetchAdsFromWeb4(keywords, pagesToScrape, category));
+
+            var allResults = await Task.WhenAll(tasks);
+            return allResults.SelectMany(x => x).ToList();
+        }catch(Exception ex)
+        {
+            throw ex;
         }
-
-        // Añadir siempre las otras tareas
-        tasks.Add(FetchAdsFromWeb3(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice));
-        tasks.Add(FetchAdsFromWeb4(keywords, pagesToScrape, category));
-
-        var allResults = await Task.WhenAll(tasks);
-        return allResults.SelectMany(x => x).ToList();
     }
 
     public async Task<List<Root>> FetchAdsFromWeb2(string keywords)

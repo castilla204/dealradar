@@ -95,8 +95,8 @@ namespace DataLayer.Models.Wallapop
         public DateTime updateDate { get; set; }
         public int Adscore { get; set; }
         public int finalScore { get; set; }
-        public string goodThings { get; set; }
-        public string badThings { get; set; }
+        public List<string> goodThings { get; set; }
+        public List<string> badThings { get; set; }
         public DateTime ScrappedDate { get; set; }
     }
 
