@@ -40,6 +40,17 @@ builder.Services.AddScoped<IWeb4Service, Web4Service>(); // Registro del servici
 builder.Services.AddScoped<IWebMixerService, WebMixerService>(); // Registro de la capa de datos
 // Registro del servicio
 builder.Services.AddHttpClient();
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -48,6 +59,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

@@ -121,7 +121,7 @@ export interface ScrapingRequest {
 @Route('scraping')
 export class ScrapingController extends Controller {
     private readonly CONCURRENT_PAGES = 15;
-    private readonly BROWSER_WS = "wss://brd-customer-hl_959f9d49-zone-scraping_browser1:52skc782mq4u@brd.superproxy.io:9222";
+    private readonly BROWSER_WS = "wss://brd-customer-hl_40773f3b-zone-scraping_browser1:ej8tz74leyrn@brd.superproxy.io:9222";
 
     private async createBrowserPage() {
         const browser = await puppeteerExtra.connect({

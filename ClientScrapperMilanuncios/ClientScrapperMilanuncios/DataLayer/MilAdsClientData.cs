@@ -99,6 +99,12 @@ namespace ClientScrapperMilanuncios.DataLayer
                             string responseBody = await response.Content.ReadAsStringAsync();
                             adList.AddRange(JsonConvert.DeserializeObject<List<Root>>(responseBody));
 
+                            foreach (var ad in adList)
+                            {
+                                ad.images = ad.images.Select(image => image + "?rule=detail_640x480").ToList();
+                            }
+
+
                             await LogSearchAsync(term); // Registrar búsqueda
                         }
                         else

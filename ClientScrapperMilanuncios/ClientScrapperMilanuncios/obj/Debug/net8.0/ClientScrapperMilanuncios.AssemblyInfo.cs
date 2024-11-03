@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ClientScrapperMilanuncios")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9c1a86492a8758bfe91c63edc9f3fecebe48c93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5601b67dbae677ddda279417626aaf31c5cfc08")]
 [assembly: System.Reflection.AssemblyProductAttribute("ClientScrapperMilanuncios")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ClientScrapperMilanuncios")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
