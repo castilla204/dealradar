@@ -3,60 +3,119 @@
   "WorkspaceRootPath": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\webmixerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\wallapop\\grupmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\iwebmixerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\iweb3service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\web3service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\controllers\\webmixercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:controllers\\webmixercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\controllers\\web4controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:controllers\\web4controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\serviceslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web3data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\scrappergateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:scrappergateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb3data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\datalayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web4data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb4data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\designtimedbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\web4service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\scrappergateway.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:scrappergateway.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\postgresmodels\\ad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\postgresmodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\postgresmodels\\like.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\admodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\admappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\web4service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web4data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\cochesnetmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\wallapop\\grupmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\controllers\\web4controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:controllers\\web4controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\iweb4service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\iwebmixerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb4data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\wallapopmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web3data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\iweb3service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\wallapop\\wallapoporiginalmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb3data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb1data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\iweb2data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\models\\cochesnet\\cochesnetoriginalmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\vintedmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\scrappergateway\\controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6A50E1E-48B9-4387-A0A4-380096EFF1FD}|ScrapperGateway.csproj|solutionrelative:controllers\\web3controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BBBB13E-8488-4ABD-8149-4D251B40030B}|..\\ServicesLayer\\ServicesLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\serviceslayer\\web3service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\web2data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D07ACDF6-46AC-4EA3-B15C-CD08E443C8A1}|..\\DataLayer\\DataLayer.csproj|c:\\users\\diego\\onedrive - educacyl\\escritorio\\grup\\scrappergateway\\datalayer\\miladsmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,19 +125,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 34,
               "Title": "Web2Data.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web2Data.cs",
               "RelativeDocumentMoniker": "..\\DataLayer\\Web2Data.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web2Data.cs",
               "RelativeToolTip": "..\\DataLayer\\Web2Data.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAACBjwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T16:12:13.483Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IWebMixerService.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\IWebMixerService.cs",
+              "RelativeDocumentMoniker": "..\\ServicesLayer\\IWebMixerService.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\IWebMixerService.cs",
+              "RelativeToolTip": "..\\ServicesLayer\\IWebMixerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:36:59.936Z",
               "IsPinned": true
             },
             {
@@ -95,43 +167,301 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Web3Data.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web3Data.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Web3Data.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web3Data.cs",
-              "RelativeToolTip": "..\\DataLayer\\Web3Data.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwAoAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "DesignTimeDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\DesignTimeDbContextFactory.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\DesignTimeDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\DesignTimeDbContextFactory.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\DesignTimeDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T17:11:27.7Z"
+              "WhenOpened": "2024-11-07T20:44:17.593Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CochesNetMappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\CochesNetMappingProfile.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\CochesNetMappingProfile.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\CochesNetMappingProfile.cs",
-              "RelativeToolTip": "..\\DataLayer\\CochesNetMappingProfile.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T18:11:58.268Z"
+              "DocumentIndex": 8,
+              "Title": "ScrapperGateway.http",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\ScrapperGateway.http",
+              "RelativeDocumentMoniker": "ScrapperGateway.http",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\ScrapperGateway.http",
+              "RelativeToolTip": "ScrapperGateway.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-07T20:45:05.332Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "WebMixerController.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\WebMixerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WebMixerController.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\WebMixerController.cs",
+              "RelativeToolTip": "Controllers\\WebMixerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T17:47:23.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataLayer.csproj",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj",
+              "RelativeDocumentMoniker": "..\\DataLayer\\DataLayer.csproj",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\DataLayer.csproj",
+              "RelativeToolTip": "..\\DataLayer\\DataLayer.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-07T20:43:34.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "WebMixerService.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\WebMixerService.cs",
               "RelativeDocumentMoniker": "..\\ServicesLayer\\WebMixerService.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\WebMixerService.cs",
               "RelativeToolTip": "..\\ServicesLayer\\WebMixerService.cs",
-              "ViewState": "AgIAAJ4BAAAAAAAAAAAewIMBAAB0AAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAASwFsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T17:47:31.908Z"
+              "WhenOpened": "2024-10-27T17:47:31.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServicesLayer.csproj",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\ServicesLayer.csproj",
+              "RelativeDocumentMoniker": "..\\ServicesLayer\\ServicesLayer.csproj",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\ServicesLayer.csproj",
+              "RelativeToolTip": "..\\ServicesLayer\\ServicesLayer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-07T20:43:28.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ScrapperGateway.csproj",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\ScrapperGateway.csproj",
+              "RelativeDocumentMoniker": "ScrapperGateway.csproj",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\ScrapperGateway.csproj",
+              "RelativeToolTip": "ScrapperGateway.csproj",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABMAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-07T20:43:48.72Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T17:32:06.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T18:54:32.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-21T18:54:16.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\PostGresModels\\User.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\PostGresModels\\User.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\PostGresModels\\User.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\PostGresModels\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T17:29:46.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Like.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\PostGresModels\\Like.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\PostGresModels\\Like.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\PostGresModels\\Like.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\PostGresModels\\Like.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T17:29:41.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Ad.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\PostGresModels\\Ad.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\PostGresModels\\Ad.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\PostGresModels\\Ad.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\PostGresModels\\Ad.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA5wAsAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T17:29:35.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdModel.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\AdModel.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\AdModel.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\AdModel.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\AdModel.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwCUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T19:22:12.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AdMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\AdMappingProfile.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\AdMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\AdMappingProfile.cs",
+              "RelativeToolTip": "..\\DataLayer\\AdMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T18:04:14.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Web4Data.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web4Data.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Web4Data.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web4Data.cs",
+              "RelativeToolTip": "..\\DataLayer\\Web4Data.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T17:37:11.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Web4Service.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\Web4Service.cs",
+              "RelativeDocumentMoniker": "..\\ServicesLayer\\Web4Service.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\Web4Service.cs",
+              "RelativeToolTip": "..\\ServicesLayer\\Web4Service.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T20:56:34.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CochesNetMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\CochesNetMappingProfile.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\CochesNetMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\CochesNetMappingProfile.cs",
+              "RelativeToolTip": "..\\DataLayer\\CochesNetMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T18:11:58.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GrupModel.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAswAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T19:22:00.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Web4Controller.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\Web4Controller.cs",
+              "RelativeDocumentMoniker": "Controllers\\Web4Controller.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\Web4Controller.cs",
+              "RelativeToolTip": "Controllers\\Web4Controller.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAhwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T20:29:51.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IWeb4Data.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb4Data.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\IWeb4Data.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb4Data.cs",
+              "RelativeToolTip": "..\\DataLayer\\IWeb4Data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T19:39:42.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IWeb4Service.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\IWeb4Service.cs",
+              "RelativeDocumentMoniker": "..\\ServicesLayer\\IWeb4Service.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\IWeb4Service.cs",
+              "RelativeToolTip": "..\\ServicesLayer\\IWeb4Service.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T19:44:14.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "WallapopMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\WallapopMappingProfile.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\WallapopMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\WallapopMappingProfile.cs",
+              "RelativeToolTip": "..\\DataLayer\\WallapopMappingProfile.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwCAAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T16:01:36.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Web3Data.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web3Data.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Web3Data.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web3Data.cs",
+              "RelativeToolTip": "..\\DataLayer\\Web3Data.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAIAwwGYAAACUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T17:11:27.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "IWeb3Service.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\IWeb3Service.cs",
               "RelativeDocumentMoniker": "..\\ServicesLayer\\IWeb3Service.cs",
@@ -143,80 +473,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IWeb4Data.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb4Data.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\IWeb4Data.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb4Data.cs",
-              "RelativeToolTip": "..\\DataLayer\\IWeb4Data.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "DocumentIndex": 26,
+              "Title": "WallapopOriginalModel.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\Wallapop\\WallapopOriginalModel.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\Wallapop\\WallapopOriginalModel.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\Wallapop\\WallapopOriginalModel.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\Wallapop\\WallapopOriginalModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T18:31:43.912Z"
+              "WhenOpened": "2024-11-05T16:03:30.387Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Web4Controller.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\Web4Controller.cs",
-              "RelativeDocumentMoniker": "Controllers\\Web4Controller.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\Web4Controller.cs",
-              "RelativeToolTip": "Controllers\\Web4Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 35,
+              "Title": "MilAdsMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\MilAdsMappingProfile.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\MilAdsMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\MilAdsMappingProfile.cs",
+              "RelativeToolTip": "..\\DataLayer\\MilAdsMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T20:29:51.895Z"
+              "WhenOpened": "2024-11-05T19:19:35.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwC0AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T18:54:32.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-21T18:54:16.356Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Web4Service.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\Web4Service.cs",
-              "RelativeDocumentMoniker": "..\\ServicesLayer\\Web4Service.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\Web4Service.cs",
-              "RelativeToolTip": "..\\ServicesLayer\\Web4Service.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T20:56:34.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GrupModel.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
-              "RelativeToolTip": "..\\DataLayer\\Models\\Wallapop\\GrupModel.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAswHIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T20:03:20.629Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 27,
               "Title": "IWeb3Data.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb3Data.cs",
               "RelativeDocumentMoniker": "..\\DataLayer\\IWeb3Data.cs",
@@ -228,19 +509,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IWebMixerService.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\IWebMixerService.cs",
-              "RelativeDocumentMoniker": "..\\ServicesLayer\\IWebMixerService.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\IWebMixerService.cs",
-              "RelativeToolTip": "..\\ServicesLayer\\IWebMixerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 29,
+              "Title": "IWeb2Data.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb2Data.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\IWeb2Data.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb2Data.cs",
+              "RelativeToolTip": "..\\DataLayer\\IWeb2Data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T18:36:59.936Z"
+              "WhenOpened": "2024-11-05T16:19:18.693Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 28,
+              "Title": "IWeb1Data.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb1Data.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\IWeb1Data.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\IWeb1Data.cs",
+              "RelativeToolTip": "..\\DataLayer\\IWeb1Data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T16:19:19.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CochesNetOriginalModel.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\CochesNet\\CochesNetOriginalModel.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Models\\CochesNet\\CochesNetOriginalModel.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Models\\CochesNet\\CochesNetOriginalModel.cs",
+              "RelativeToolTip": "..\\DataLayer\\Models\\CochesNet\\CochesNetOriginalModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T16:07:11.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "VintedMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\VintedMappingProfile.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\VintedMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\VintedMappingProfile.cs",
+              "RelativeToolTip": "..\\DataLayer\\VintedMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T16:01:35.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "Web3Controller.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\Web3Controller.cs",
               "RelativeDocumentMoniker": "Controllers\\Web3Controller.cs",
@@ -252,7 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 33,
               "Title": "Web3Service.cs",
               "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ServicesLayer\\Web3Service.cs",
               "RelativeDocumentMoniker": "..\\ServicesLayer\\Web3Service.cs",
@@ -261,30 +578,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T16:27:53.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "WebMixerController.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\WebMixerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\WebMixerController.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\ScrapperGateway\\Controllers\\WebMixerController.cs",
-              "RelativeToolTip": "Controllers\\WebMixerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T17:47:23.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Web4Data.cs",
-              "DocumentMoniker": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web4Data.cs",
-              "RelativeDocumentMoniker": "..\\DataLayer\\Web4Data.cs",
-              "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ScrapperGateway\\DataLayer\\Web4Data.cs",
-              "RelativeToolTip": "..\\DataLayer\\Web4Data.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T17:37:11.989Z"
             }
           ]
         }

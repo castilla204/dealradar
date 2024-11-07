@@ -28,17 +28,17 @@ C:\Users\Diego\source\repos\GrupGateway\ServicesLayer\obj\Debug\net8.0\ServicesL
 C:\Users\Diego\source\repos\GrupGateway\ServicesLayer\obj\Debug\net8.0\refint\ServicesLayer.dll
 C:\Users\Diego\source\repos\GrupGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.pdb
 C:\Users\Diego\source\repos\GrupGateway\ServicesLayer\obj\Debug\net8.0\ref\ServicesLayer.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\ServicesLayer.deps.json
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\ServicesLayer.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\ServicesLayer.pdb
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\DataLayer.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\DataLayer.pdb
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.csproj.AssemblyReference.cache
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.AssemblyInfoInputs.cache
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.AssemblyInfo.cs
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.csproj.CoreCompileInputs.cache
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.sourcelink.json
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\ServicesLayer.deps.json
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\ServicesLayer.dll
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\ServicesLayer.pdb
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\DataLayer.dll
-C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\bin\Debug\net8.0\DataLayer.pdb
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\Services.2D1E3DF1.Up2Date
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\ServicesLayer.dll
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ServicesLayer\obj\Debug\net8.0\refint\ServicesLayer.dll

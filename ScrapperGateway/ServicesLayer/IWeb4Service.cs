@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace ServicesLayer
 {
     public interface IWeb4Service
     {
-        public Task<String> GetWallapop(string keywords);
+        public Task<List<AdModel>> GetWallapop(string keywords);
     }
 }

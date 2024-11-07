@@ -1,0 +1,10 @@
+S C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway> dotnet ef migrations add InitialCreate --project DataLayer --startup-project ScrapperGateway
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+PS C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway> dotnet ef database update --project DataLayer --startup-project ScrapperGateway
+Build started...
+Build succeeded.
+Applying migration '20241107211050_InitialCreate'.
+Done.
+PS C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway>

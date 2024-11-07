@@ -1,0 +1,44 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255),
+    google_id VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE ads (
+    id SERIAL PRIMARY KEY,
+    description TEXT,
+    title VARCHAR(255) NOT NULL,
+    url VARCHAR(255),
+    price NUMERIC(10, 2),
+    images TEXT[], -- Array de URLs de imágenes
+    ad_score INT,
+    final_score INT,
+    good_things TEXT[], -- Array de aspectos positivos
+    bad_things TEXT[], -- Array de aspectos negativos
+    publish_date TIMESTAMP,
+    category VARCHAR(100),
+    category_id INT,
+    province VARCHAR(100),
+    province_id INT,
+    city VARCHAR(100),
+    city_id INT,
+    highlighted BOOLEAN DEFAULT FALSE,
+    is_new BOOLEAN DEFAULT TRUE,
+    is_reserved BOOLEAN DEFAULT FALSE,
+    slug VARCHAR(255),
+    seller_type VARCHAR(100),
+    tags TEXT[], -- Array de etiquetas
+    user_id INT REFERENCES users(id), -- Relación con tabla users
+    update_date TIMESTAMP,
+    scrapped_date TIMESTAMP
+);
+
+CREATE TABLE likes (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id),
+    ad_id INT REFERENCES ads(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

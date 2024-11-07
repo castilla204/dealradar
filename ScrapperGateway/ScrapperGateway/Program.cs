@@ -1,18 +1,27 @@
 using AutoMapper;
 using DataLayer;
 using DataLayer.Mappers;
+using DataLayer.Models;
 using DataLayer.Mapping;
+using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
 using ServicesLayer;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Configure Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configure PostgreSQL database connection
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
+
+// Configure MongoDB
 var mongoSettings = builder.Configuration.GetSection("MongoDbSettings");
 var client = new MongoClient(mongoSettings["ConnectionString"]);
 var database = client.GetDatabase(mongoSettings["DatabaseName"]);
@@ -20,34 +29,34 @@ var collection = database.GetCollection<DataLayer.Models.Wallapop.Root>(mongoSet
 
 builder.Services.AddSingleton(collection);
 
-// **Registrar AutoMapper**
-// Si tienes perfiles de mapeo, debes añadirlos aquí
-
+// ** Register AutoMapper **
+// If you have mapping profiles, you need to add them here
 builder.Services.AddAutoMapper(typeof(WallapopMappingProfile));
 builder.Services.AddAutoMapper(typeof(VintedMappingProfile));
 builder.Services.AddAutoMapper(typeof(CochesNetMappingProfile));
 
+// Register Data and Service layers
+builder.Services.AddScoped<IWeb1Data, Web1Data>(); // Data layer for Web1
+builder.Services.AddScoped<IWeb1Service, Web1Service>(); // Service for Web1
+builder.Services.AddScoped<IWeb2Data, Web2Data>(); // Data layer for Web2
+builder.Services.AddScoped<IWeb2Service, Web2Service>(); // Service for Web2
+builder.Services.AddScoped<IWeb3Data, Web3Data>(); // Data layer for Web3
+builder.Services.AddScoped<IWeb3Service, Web3Service>(); // Service for Web3
+builder.Services.AddScoped<IWeb4Data, Web4Data>(); // Data layer for Web4
+builder.Services.AddScoped<IWeb4Service, Web4Service>(); // Service for Web4
+builder.Services.AddScoped<IWebMixerService, WebMixerService>(); // Mixer service
 
-// Registro de tus servicios
-builder.Services.AddScoped<IWeb1Data, Web1Data>(); // Registro de la capa de datos
-builder.Services.AddScoped<IWeb1Service, Web1Service>(); // Registro del servicio
-builder.Services.AddScoped<IWeb2Data, Web2Data>(); // Registro de la capa de datos
-builder.Services.AddScoped<IWeb2Service, Web2Service>(); // Registro del servicio
-builder.Services.AddScoped<IWeb3Data, Web3Data>(); // Registro de la capa de datos
-builder.Services.AddScoped<IWeb3Service, Web3Service>(); // Registro del servicio
-builder.Services.AddScoped<IWeb4Data, Web4Data>(); // Registro de la capa de datos
-builder.Services.AddScoped<IWeb4Service, Web4Service>(); // Registro del servicio
-builder.Services.AddScoped<IWebMixerService, WebMixerService>(); // Registro de la capa de datos
-// Registro del servicio
+// Register HTTP client
 builder.Services.AddHttpClient();
 
+// Configure CORS (Cross-Origin Resource Sharing)
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
+    options.AddDefaultPolicy(corsBuilder =>
     {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
+        corsBuilder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
     });
 });
 
@@ -60,13 +69,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(); // Enable CORS
 
-app.UseCors();
+app.UseHttpsRedirection(); // Ensure HTTPS requests
 
-app.UseHttpsRedirection();
+app.UseAuthorization(); // Enable authorization middleware
 
-app.UseAuthorization();
+app.MapControllers(); // Map controller routes
 
-app.MapControllers();
-
-app.Run();
+app.Run(); // Start the application

@@ -1,0 +1,6 @@
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.csproj.AssemblyReference.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.AssemblyInfoInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.AssemblyInfo.cs
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.csproj.CoreCompileInputs.cache
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.sourcelink.json

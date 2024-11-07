@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DataLayer.Mapping;
 using MongoDB.Driver;
 using AutoMapper;
 using DataLayer.Models.Wallapop;
+using DataLayer.Models;
 
 namespace DataLayer
 {
@@ -25,31 +27,22 @@ namespace DataLayer
             public List<T> data { get; set; }
         }
 
-        public async Task<string> MakeRequestAsync(string keywords)
-        {
-            var filter = Builders<Root>.Filter.Or(
-                Builders<Root>.Filter.Regex(x => x.title, new MongoDB.Bson.BsonRegularExpression(keywords, "i")),
-                Builders<Root>.Filter.Regex(x => x.description, new MongoDB.Bson.BsonRegularExpression(keywords, "i"))
-            );
-
-            var resultados = await _anuncios.Find(filter).ToListAsync();
-
-            // Convertir los resultados a JSON dentro de un objeto que tenga la propiedad "data"
-            var jsonResultados = JsonConvert.SerializeObject(new { data = resultados }, Formatting.Indented);
-
-            return jsonResultados;
-        }
-
-        public async Task<List<Root>> GetAnunciosAsync(string keyword)
+        public async Task<List<AdModel>> GetAnunciosAsync(string keyword)
         {
             try
             {
-                string jsonResponse = await MakeRequestAsync(keyword);
+                var filter = Builders<Root>.Filter.Or(
+                    Builders<Root>.Filter.Regex(x => x.title, new MongoDB.Bson.BsonRegularExpression(keyword, "i")),
+                    Builders<Root>.Filter.Regex(x => x.description, new MongoDB.Bson.BsonRegularExpression(keyword, "i"))
+                );
 
-                // Cambiar a JsonConvert para deserializar
-                var dataWrapper = JsonConvert.DeserializeObject<DataWrapper<Root>>(jsonResponse);
+                var resultados = await _anuncios.Find(filter).ToListAsync();
 
-                return dataWrapper?.data ?? new List<Root>();
+                // Mapeo a AdModel
+                var adModels = _mapper.Map<List<AdModel>>(resultados);
+
+                // Convertir los resultados mapeados a JSON dentro de un objeto que tenga la propiedad "data"
+                return adModels;// Si necesitas que sea un JSON en string
             }
             catch (Exception ex)
             {

@@ -8,7 +8,10 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataLayer;
+using DataLayer.Models;
+using DataLayer.Models.PostGresModels;
 using DataLayer.Models.Wallapop;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ServicesLayer;
 
@@ -18,7 +21,7 @@ public class AdLight
     public string Id { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
-    public int Price { get; set; }
+    public double Price { get; set; }
 }
 
 public class Categorys
@@ -38,7 +41,8 @@ public class WebMixerService : IWebMixerService
     private readonly string _openAiApiKey;
     private readonly List<Categorys> categorias;
     private  List<AdLight> potentialDeals;
-    private List<Root> allAdsList;
+    private List<AdModel> allAdsList;
+    private AppDbContext _context;
 
 
 
@@ -50,8 +54,10 @@ public class WebMixerService : IWebMixerService
         IWeb4Data web4Data,
         IMapper mapper,
         HttpClient httpClient,
-        IConfiguration configuration)
+        IConfiguration configuration,
+        AppDbContext appDbContext)
     {
+        _context = appDbContext;
         _web1Data = web1Data;
         _web2Data = web2Data;
         _web3Data = web3Data;
@@ -75,38 +81,58 @@ public class WebMixerService : IWebMixerService
 
     }
 
-    public async Task<List<Root>> AnalyzeAds(
-        string keywords,
-        string userSearch,
-        int pagesToScrape,
-        int? category,
-        string? latitude,
-        string? longitude,
-        int? minPrice,
-        int? maxPrice,
-        int? brandId,
-        int? modelId)
+    public async Task<List<AdModel>> AnalyzeAds(
+      string keywords,
+      string userSearch,
+      int pagesToScrape,
+      int? category,
+      string? latitude,
+      string? longitude,
+      int? minPrice,
+      int? maxPrice,
+      int? brandId,
+      int? modelId)
     {
-        allAdsList = await GetAllAds(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice, brandId, modelId);
+        // Obtener todos los anuncios.
+         allAdsList = await GetAllAds(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice, brandId, modelId);
+
+        // Mapear los anuncios al formato más simple (light).
         var adsLight = MapAdsToLightFormat(allAdsList);
+
+        // Analizar los anuncios para encontrar posibles ofertas.
         var analyzed = await AnalyzeForDeals(adsLight);
-        potentialDeals = analyzed.PotentialDeals;
+        var potentialDeals = analyzed.PotentialDeals;
         List<string> DealsIdList = potentialDeals.Select(deal => deal.Id).ToList();
+
+        // Dividir los anuncios en lotes para enviarlos a la IA.
         var batches = SplitAdsIntoBatches(adsLight);
+
+        // Obtener las puntuaciones de los anuncios desde la IA.
         var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice, category, DealsIdList);
 
-        var hola= GetBestAds(adsLight, scores);
-        return hola;
+        // Filtrar los mejores anuncios según las puntuaciones.
+        List<AdModel> listadoAnuncios = GetBestAds(adsLight, scores);
+        List<Ad> listadomapeado = _mapper.Map<List<Ad>>(listadoAnuncios);
+
+        // Guardar en la base de datos los anuncios que no existen aún.
+        _context.Ads.AddRangeAsync(listadomapeado);
+
+        // Guardar los cambios en la base de datos.
+        await _context.SaveChangesAsync();
+
+        // Retornar la lista de anuncios analizados.
+        return listadoAnuncios;
     }
 
-    public List<AdLight> MapAdsToLightFormat(List<Root> allAdsList)
+
+    public List<AdLight> MapAdsToLightFormat(List<AdModel> allAdsList)
     {
         return allAdsList.Select(ad => new AdLight
         {
             Id = ad.id,
             Title = ad.title,
             Description = ad.description,
-            Price = ad.price.cashPrice.value
+            Price = ad.price
         }).ToList();
     }
 
@@ -342,7 +368,7 @@ IMPORTANTE:
 
 
 
-    public List<Root> GetBestAds(List<AdLight> ads, List<(string Id, int Score, List<string> Positives, List<string> Negatives)> scoredAds)
+    public List<AdModel> GetBestAds(List<AdLight> ads, List<(string Id, int Score, List<string> Positives, List<string> Negatives)> scoredAds)
     {
         // Crear un diccionario único que mapea el ID con la tupla completa de score, positivos y negativos.
         var scoreDictionary = scoredAds.ToDictionary(ad => ad.Id, ad => (ad.Score, ad.Positives, ad.Negatives));
@@ -371,22 +397,22 @@ IMPORTANTE:
     }
 
 
-    public async Task<List<Root>> GetAllAds(string keywords, int pagesToScrape, int? category, string? latitude, string? longitude, int? minPrice, int? maxPrice, int? brandId, int? modelId)
+    public async Task<List<AdModel>> GetAllAds(string keywords, int pagesToScrape, int? category, string? latitude, string? longitude, int? minPrice, int? maxPrice, int? brandId, int? modelId)
     {
         try
         {
-            List<Task<List<Root>>> tasks = new List<Task<List<Root>>>();
+            List<Task<List<AdModel>>> tasks = new List<Task<List<AdModel>>>();
 
             // Solo añadir FetchAdsFromWeb2 si la categoría es 4 (moda)
-            if (category == 4)
-            {
-                tasks.Add(FetchAdsFromWeb2(keywords));
-            }
+            //if (category == 4)
+            //{
+            //    tasks.Add(FetchAdsFromWeb2(keywords));
+            //}
 
             // Añadir siempre las otras tareas
 
             tasks.Add(FetchAdsFromWeb3(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice));
-            tasks.Add(FetchAdsFromWeb4(keywords, pagesToScrape, category));
+            //tasks.Add(FetchAdsFromWeb4(keywords, pagesToScrape, category));
 
             var allResults = await Task.WhenAll(tasks);
             return allResults.SelectMany(x => x).ToList();
@@ -402,7 +428,7 @@ IMPORTANTE:
         return JsonSerializer.Deserialize<List<Root>>(jsonResponse) ?? new List<Root>();
     }
 
-    public async Task<List<Root>> FetchAdsFromWeb3(string keywords, int pagesToScrape, int? category ,string? latitude, string? longitude, int? minPrice, int? maxPrice)
+    public async Task<List<AdModel>> FetchAdsFromWeb3(string keywords, int pagesToScrape, int? category ,string? latitude, string? longitude, int? minPrice, int? maxPrice)
     {
         int categoryInt = 0;
         if (category == 1)
@@ -424,12 +450,12 @@ IMPORTANTE:
 
 
         string jsonResponse = await _web3Data.MakeRequestAsync(keywords, pagesToScrape, categoryInt, latitude, longitude, minPrice ?? 0, maxPrice ?? int.MaxValue);
-        return JsonSerializer.Deserialize<List<Root>>(jsonResponse) ?? new List<Root>();
+        return JsonSerializer.Deserialize<List<AdModel>>(jsonResponse) ?? new List<AdModel>();
     }
 
 
 
-    public async Task<List<Root>> FetchAdsFromWeb4(string keyword, int pagesToScrape, int? category)
+    public async Task<List<AdModel>> FetchAdsFromWeb4(string keyword, int pagesToScrape, int? category)
     {
         string categoryString = "";
         if(category == 1)
@@ -474,7 +500,7 @@ IMPORTANTE:
                 {
                     string result = await response.Content.ReadAsStringAsync();
                     Console.WriteLine($"Response: {result}");
-                    List<Root> lista = await _web4Data.GetAnunciosAsync(keyword);
+                    List<AdModel> lista = await _web4Data.GetAnunciosAsync(keyword);
                     return lista;
                 
                 }catch(Exception ex)
@@ -496,7 +522,7 @@ IMPORTANTE:
             Console.WriteLine($"Exception: {ex.Message}");
         }
 
-        return new List<Root>();
+        return new List<AdModel>();
     }
 
 
@@ -563,7 +589,7 @@ IMPORTANTE:
                       .ToDictionary(x => x.Key, x => x.Value);
     }
 
-    private double CalculateMedian(List<int> numbers)
+    private double CalculateMedian(List<double> numbers)
     {
         var sorted = numbers.OrderBy(n => n).ToList();
         int mid = sorted.Count / 2;
@@ -572,7 +598,7 @@ IMPORTANTE:
             : sorted[mid];
     }
 
-    private double CalculateStandardDeviation(List<int> numbers)
+    private double CalculateStandardDeviation(List<double> numbers)
     {
         double average = numbers.Average();
         double sumOfSquares = numbers.Sum(n => Math.Pow(n - average, 2));
@@ -592,7 +618,7 @@ IMPORTANTE:
         };
     }
 
-    private double CalculatePercentile(List<int> numbers, int percentile)
+    private double CalculatePercentile(List<double> numbers, int percentile)
     {
         var sorted = numbers.OrderBy(n => n).ToList();
         int index = (int)Math.Ceiling((percentile / 100.0) * sorted.Count) - 1;

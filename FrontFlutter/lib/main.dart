@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'screens/search_screen.dart';
+import 'screens/main_screen.dart';
 import 'providers/ads_provider.dart';
 
 void main() {
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: const SearchScreen(),
+        home: const MainScreen(),
       ),
     );
   }

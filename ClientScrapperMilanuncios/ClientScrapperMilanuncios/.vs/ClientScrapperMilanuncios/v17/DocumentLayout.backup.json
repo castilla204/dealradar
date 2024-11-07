@@ -62,8 +62,7 @@
               "RelativeToolTip": "Models\\GrupAd.cs",
               "ViewState": "AgIAADgAAAAAAAAAAIAzwEcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T06:55:04.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T06:55:04.021Z"
             },
             {
               "$type": "Document",
@@ -99,8 +98,7 @@
               "RelativeToolTip": "Controller\\MilAdsClientController.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwCMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T07:00:23.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T07:00:23.261Z"
             },
             {
               "$type": "Document",
@@ -124,8 +122,7 @@
               "RelativeToolTip": "Models\\AutoMapperClass.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T06:54:56.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T06:54:56.382Z"
             },
             {
               "$type": "Document",
@@ -135,7 +132,7 @@
               "RelativeDocumentMoniker": "DataLayer\\MilAdsClientData.cs",
               "ToolTip": "C:\\Users\\Diego\\OneDrive - Educacyl\\Escritorio\\GRUP\\ClientScrapperMilanuncios\\ClientScrapperMilanuncios\\DataLayer\\MilAdsClientData.cs",
               "RelativeToolTip": "DataLayer\\MilAdsClientData.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAmwGsAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T06:53:46.822Z",
               "EditorCaption": ""

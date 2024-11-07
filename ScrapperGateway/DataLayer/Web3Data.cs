@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using ScrapperGateway.Models.Wallapop;
 using AutoMapper;
+using DataLayer.Models;
 
 namespace DataLayer
 {
@@ -64,7 +65,7 @@ namespace DataLayer
             maxprice = maxprice ?? 2000;
             category = category ?? 0; 
 
-            List<DataLayer.Models.Wallapop.Root> anuncios = new List<DataLayer.Models.Wallapop.Root>();
+            List<AdModel> anuncios = new List<AdModel>();
 
             try
             {
@@ -104,7 +105,7 @@ namespace DataLayer
 
 
                     //mapear el objeto original al grup
-                    var mappedAnuncios = _mapper.Map<List<DataLayer.Models.Wallapop.Root>>(pageAnuncios);
+                    var mappedAnuncios = _mapper.Map<List<AdModel>>(pageAnuncios);
                     var hola = mappedAnuncios;
                     anuncios.AddRange(mappedAnuncios);
           
@@ -120,7 +121,7 @@ namespace DataLayer
             catch (Exception ex)
             {
                 Console.WriteLine($"Error en la petición: {ex.Message}");
-                return JsonConvert.SerializeObject(new List<DataLayer.Models.Wallapop.Root>());
+                return JsonConvert.SerializeObject(new List<AdModel>());
             }
         }
     }
