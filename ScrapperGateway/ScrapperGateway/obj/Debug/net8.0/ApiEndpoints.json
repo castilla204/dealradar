@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "UserController",
+    "Method": "GoogleAuth",
+    "RelativePath": "api/User/google-auth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authDto",
+        "Type": "GoogleAuthDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ScrapperGateway.Controllers.Web1Controller",
     "Method": "GetCarListings",
     "RelativePath": "Web1/carlistings",

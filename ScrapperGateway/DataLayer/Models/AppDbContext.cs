@@ -21,11 +21,7 @@ namespace DataLayer.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configurar las relaciones entre tablas
-            modelBuilder.Entity<Ad>()
-                .HasOne(a => a.User)
-                .WithMany(u => u.Ads)
-                .HasForeignKey(a => a.UserId);
+
 
             modelBuilder.Entity<Like>()
                 .HasOne(l => l.User)

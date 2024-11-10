@@ -205,3 +205,16 @@ C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGatew
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.pdb
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ScrapperGateway.genruntimeconfig.cache
 C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\obj\Debug\net8.0\ref\ScrapperGateway.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\System.Management.dll
+C:\Users\Diego\OneDrive - Educacyl\Escritorio\GRUP\ScrapperGateway\ScrapperGateway\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll

@@ -31,9 +31,8 @@ builder.Services.AddSingleton(collection);
 
 // ** Register AutoMapper **
 // If you have mapping profiles, you need to add them here
-builder.Services.AddAutoMapper(typeof(WallapopMappingProfile));
-builder.Services.AddAutoMapper(typeof(VintedMappingProfile));
-builder.Services.AddAutoMapper(typeof(CochesNetMappingProfile));
+builder.Services.AddAutoMapper(typeof(AdMappingProfile), typeof(WallapopMappingProfile), typeof(VintedMappingProfile), typeof(CochesNetMappingProfile));
+
 
 // Register Data and Service layers
 builder.Services.AddScoped<IWeb1Data, Web1Data>(); // Data layer for Web1

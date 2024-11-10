@@ -12,7 +12,7 @@
         public int? FinalScore { get; set; }  // Nullable para permitir valores nulos
         public string[] GoodThings { get; set; }  // Cambiado a array
         public string[] BadThings { get; set; }   // Cambiado a array
-        public DateTime? PublishDate { get; set; }  // Nullable
+        public DateTimeOffset? PublishDate { get; set; }  // Nullable
         public string Category { get; set; }
         public int? CategoryId { get; set; }     // Nullable
         public string Province { get; set; }
@@ -25,10 +25,8 @@
         public string Slug { get; set; }
         public string SellerType { get; set; }
         public string[] Tags { get; set; }       // Cambiado a array
-        public int? UserId { get; set; }         // Nullable para la relación
-        public virtual User User { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public DateTime? ScrappedDate { get; set; }
+        public DateTimeOffset? UpdateDate { get; set; }
+        public DateTimeOffset? ScrappedDate { get; set; }
         public virtual ICollection<Like> Likes { get; set; }
     }
 }

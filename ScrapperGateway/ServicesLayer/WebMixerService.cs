@@ -82,6 +82,7 @@ public class WebMixerService : IWebMixerService
     }
 
     public async Task<List<AdModel>> AnalyzeAds(
+    
       string keywords,
       string userSearch,
       int pagesToScrape,
@@ -93,35 +94,46 @@ public class WebMixerService : IWebMixerService
       int? brandId,
       int? modelId)
     {
-        // Obtener todos los anuncios.
-         allAdsList = await GetAllAds(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice, brandId, modelId);
+        try
+        {
+            // Obtener todos los anuncios.
+            allAdsList = await GetAllAds(keywords, pagesToScrape, category, latitude, longitude, minPrice, maxPrice, brandId, modelId);
 
-        // Mapear los anuncios al formato más simple (light).
-        var adsLight = MapAdsToLightFormat(allAdsList);
+            var adsLight = MapAdsToLightFormat(allAdsList);
 
-        // Analizar los anuncios para encontrar posibles ofertas.
-        var analyzed = await AnalyzeForDeals(adsLight);
-        var potentialDeals = analyzed.PotentialDeals;
-        List<string> DealsIdList = potentialDeals.Select(deal => deal.Id).ToList();
+            // Analizar los anuncios para encontrar posibles ofertas.
+            var analyzed = await AnalyzeForDeals(adsLight);
+            var potentialDeals = analyzed.PotentialDeals;
+            List<string> DealsIdList = potentialDeals.Select(deal => deal.Id).ToList();
 
-        // Dividir los anuncios en lotes para enviarlos a la IA.
-        var batches = SplitAdsIntoBatches(adsLight);
+            // Dividir los anuncios en lotes para enviarlos a la IA.
+            var batches = SplitAdsIntoBatches(adsLight);
 
-        // Obtener las puntuaciones de los anuncios desde la IA.
-        var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice, category, DealsIdList);
+            // Obtener las puntuaciones de los anuncios desde la IA.
+            var scores = await GetAdScoresFromAI(batches, userSearch, (int)analyzed.MedianPrice, category, DealsIdList);
 
-        // Filtrar los mejores anuncios según las puntuaciones.
-        List<AdModel> listadoAnuncios = GetBestAds(adsLight, scores);
-        List<Ad> listadomapeado = _mapper.Map<List<Ad>>(listadoAnuncios);
+            // Filtrar los mejores anuncios según las puntuaciones.
+            List<AdModel> listadoAnuncios = GetBestAds(adsLight, scores);
 
-        // Guardar en la base de datos los anuncios que no existen aún.
-        _context.Ads.AddRangeAsync(listadomapeado);
+            List<Ad> listadomapeado = _mapper.Map<List<Ad>>(listadoAnuncios);
 
-        // Guardar los cambios en la base de datos.
-        await _context.SaveChangesAsync();
+          
 
-        // Retornar la lista de anuncios analizados.
-        return listadoAnuncios;
+            await _context.Ads.AddRangeAsync(listadomapeado);
+
+
+            _context.Ads.AddRangeAsync(listadomapeado);
+
+ 
+            await _context.SaveChangesAsync();
+
+            // Retornar la lista de anuncios analizados.
+            return listadoAnuncios;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
 
 

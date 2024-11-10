@@ -14,8 +14,6 @@ namespace DataLayer.Models.PostGresModels
         public string Password { get; set; }
         public string GoogleId { get; set; }
         public DateTime CreatedAt { get; set; }
-
-        public ICollection<Ad> Ads { get; set; } // Relación con los anuncios
         public ICollection<Like> Likes { get; set; } // Relación con los likes
     }
 
