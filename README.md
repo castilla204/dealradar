@@ -1,1 +1,52 @@
-IyBEZWFsUmFkYXIgLS0tIERldGVjY2nDs24gSW50ZWxpZ2VudGUgZGUgR2FuZ2FzIGVuIFNlZ3VuZGEgTWFubwoKPiBTaXN0ZW1hIG11bHRpLXBsYXRhZm9ybWEgcXVlIGRldGVjdGEgeSBvcmRlbmEgb3BvcnR1bmlkYWRlcyBkZSBwcmVjaW8gZW4gV2FsbGFwb3AsIENvY2hlcy5uZXQgeSBvdHJvcyBtYXJrZXRwbGFjZXMgZW4gdGllbXBvIHJlYWwuCgohW1B5dGhvbl0oaHR0cHM6Ly9pbWcuc2hpZWxkcy5pby9iYWRnZS9weXRob24tMy4xMCstMzc3NkFCP3N0eWxlPWZsYXQtc3F1YXJlJmxvZ289cHl0aG9uJmxvZ29Db2xvcj13aGl0ZSkKIVtGbHV0dGVyXShodHRwczovL2ltZy5zaGllbGRzLmlvL2JhZGdlL0ZsdXR0ZXItMDJCNUY1P3N0eWxlPWZsYXQtc3F1YXJlJmxvZ289Zmx1dHRlciZsb2dvQ29sb3I9d2hpdGUpCiFbUmFiYml0TVFdKGh0dHBzOi8vaW1nLnNoaWVsZHMuaW8vYmFkZ2UvUmFiYml0TVEtRkY2NjAwP3N0eWxlPWZsYXQtc3F1YXJlJmxvZ289cmFiYml0bXEmbG9nb0NvbG9yPXdoaXRlKQoKLS0tCgojIyDCv1F1w6kgZXMgRGVhbFJhZGFyPwoKRGVhbFJhZGFyIGVzIHVuIGFncmVnYWRvciBpbnRlbGlnZW50ZSBkZSBhbnVuY2lvcyBkZSBzZWd1bmRhIG1hbm8gcXVlIGFuYWxpemEgYXV0b23DoXRpY2FtZW50ZSBwcmVjaW9zIHkgY3JpdGVyaW9zIGRlIHZhbG9yYWNpw7NuIHBhcmEgaWRlbnRpZmljYXIgZ2FuZ2FzIHJlYWxlcyBlbiB2YXJpb3MgbWFya2V0cGxhY2VzIHNpbXVsdMOhbmVhbWVudGUuCgotLS0KCiMjIEFycXVpdGVjdHVyYQoKYGBgCltXYWxsYXBvcCBTY3JhcGVyXSAgW0NvY2hlcy5uZXQgU2NyYXBlcl0gIFsuLi5dCiAgICAgICAgIHwgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgIHwKICAgICAgICAgKy0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tKwogICAgICAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICAgW1JhYmJpdE1RIE1lc3NhZ2UgQnVzXQogICAgICAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgICBbUHJvY2Vzb3IgZGUgcHJlY2lvc10KICAgICAgICAgICAgICAgICAgICAgfAogICAgICAgICAgICAgW01vbmdvREIgKyBBUEkgUHl0aG9uXQogICAgICAgICAgICAgICAgICAgICB8CiAgICAgICAgICAgW0ZsdXR0ZXIgQXBwIChBbmRyb2lkL2lPUy9XZWIpXQpgYGAKCioqRGlzZcOxbyBlc2NhbGFibGU6KiogYcOxYWRpciBudWV2YSBwbGF0YWZvcm1hID0gc29sbyB1biBudWV2byBzY3JhcGVyIHNpbiB0b2NhciBlbCByZXN0by4KCi0tLQoKIyMgU3RhY2sKCnwgQ2FwYSB8IFRlY25vbG9nw61hIHwKfC0tLXwtLS18CnwgRnJvbnRlbmQgfCBGbHV0dGVyIChBbmRyb2lkL2lPUy9XZWIpIHwKfCBNZW5zYWplcsOtYSB8IFJhYmJpdE1RIHwKfCBCYWNrZW5kL1NjcmFwaW5nIHwgUHl0aG9uIG1pY3Jvc2VydmljaW9zIHwKfCBCYXNlIGRlIGRhdG9zIHwgTW9uZ29EQiB8CnwgbmdlbmllcsOtYSBpbnZlcnNhIHwgQVBJcyBwcml2YWRhcyBkZSBXYWxsYXBvcCB5IE1pbEFudW5jaW9zIHwKCi0tLQoKIyMgQXV0b3IKCioqRGllZ28gQ2FzdGlsbGEgQWJlbGxhKiogLSBbZ2l0aHViLmNvbS9jYXN0aWxsYTIwNF0oaHR0cHM6Ly9naXRodWIuY29tL2Nhc3RpbGxhMjA0KQ==
+# DealRadar — Detección Inteligente de Gangas en Segunda Mano
+
+> Sistema multi-plataforma que detecta y ordena oportunidades de precio en Wallapop, Coches.net y otros marketplaces en tiempo real.
+
+![Python](https://img.shields.io/badge/python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02B5F5?style=flat-square&logo=flutter&logoColor=white)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+
+---
+
+## ¿Qué es DealRadar?
+
+DealRadar es un agregador inteligente de anuncios de segunda mano que analiza automáticamente precios y criterios de valoración para identificar gangas reales en varios marketplaces simultáneamente.
+
+**Diseño escalable:** añadir una nueva plataforma = solo un nuevo scraper sin tocar el resto del sistema.
+
+---
+
+## Arquitectura
+
+```
+[Wallapop Scraper]  [Coches.net Scraper]  [MilAnuncios Scraper]  [...]
+        │                   │                       │
+        └───────────────────┴───────────────────────┘
+                            │
+                  [RabbitMQ Message Bus]
+                            │
+                  [Procesador de precios]
+                            │
+                  [MongoDB + API Python]
+                            │
+               [Flutter App (Android/iOS/Web)]
+```
+
+---
+
+## Stack
+
+| Capa | Tecnología |
+|---|---|
+| Frontend | Flutter (Android/iOS/Web) |
+| Mensajería | RabbitMQ |
+| Backend / Scraping | Python microservicios |
+| Base de datos | MongoDB |
+| Ingeniería inversa | APIs privadas de Wallapop y MilAnuncios |
+
+---
+
+## Autor
+
+**Diego Castilla Abella** - [github.com/castilla204](https://github.com/castilla204)
