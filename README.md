@@ -50,3 +50,5 @@ DealRadar es un agregador inteligente de anuncios de segunda mano que analiza au
 ## Autor
 
 **Diego Castilla Abella** - [github.com/castilla204](https://github.com/castilla204)
+
+<!-- meta:sync 1785961080 -->
